@@ -1,0 +1,26 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://cfe7m88yubc8p"]
+
+[ext_resource type="Texture2D" uid="uid://bts37vao3iert" path="res://Assets/Sprites/gato_1.png" id="1_0117t"]
+[ext_resource type="Texture2D" uid="uid://i0h8wgijh817" path="res://Assets/Sprites/gato_2.png" id="2_nvnq2"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0117t")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0117t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_nvnq2")
+}],
+"loop": true,
+"name": &"move",
+"speed": 4.0
+}]

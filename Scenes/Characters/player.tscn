@@ -1,3 +1,18 @@
-[gd_scene format=3 uid="uid://cx1niqwd88kp4"]
+[gd_scene load_steps=4 format=3 uid="uid://cx1niqwd88kp4"]
 
-[node name="Player" type="Node2D"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_3cp2j"]
+[ext_resource type="SpriteFrames" uid="uid://cfe7m88yubc8p" path="res://Assets/Animation/Pikem_frames.tres" id="2_6cf6s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqyc4"]
+size = Vector2(168, 116)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_3cp2j")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_6cf6s")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 46)
+shape = SubResource("RectangleShape2D_dqyc4")

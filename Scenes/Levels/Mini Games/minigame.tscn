@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2agbvcr8vxjp"]
+
+[ext_resource type="PackedScene" uid="uid://dygpg1oyagqvd" path="res://Scenes/Characters/player_pixel.tscn" id="1_ylxee"]
+
+[node name="Minigame" type="Node2D"]
+
+[node name="Player_Pixel" parent="." instance=ExtResource("1_ylxee")]
+position = Vector2(960, 540)
+scale = Vector2(3, 3)
