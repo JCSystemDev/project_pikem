@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c83w6l1ks7gly"
-path="res://.godot/imported/Gato_down_pixel.png-29483eda6ce68a70b8a6fc5bbb54a58f.ctex"
+uid="uid://batsoaws5kjae"
+path="res://.godot/imported/Pikem_Pixel.png-0d6ff1e3c2388ecd0b7d74fbb04e2b04.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Gato_down_pixel.png"
-dest_files=["res://.godot/imported/Gato_down_pixel.png-29483eda6ce68a70b8a6fc5bbb54a58f.ctex"]
+source_file="res://Assets/Sprites/Pikem_Pixel.png"
+dest_files=["res://.godot/imported/Pikem_Pixel.png-0d6ff1e3c2388ecd0b7d74fbb04e2b04.ctex"]
 
 [params]
 
