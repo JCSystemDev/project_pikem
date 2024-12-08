@@ -1,0 +1,190 @@
+[gd_scene load_steps=21 format=3 uid="uid://b3224jaup81g6"]
+
+[ext_resource type="Script" path="res://Scripts/level.gd" id="1_7d7yd"]
+[ext_resource type="Texture2D" uid="uid://cq26e6nj7rim5" path="res://Assets/Sprites/Fondos/Escena 1/cielo 3.png" id="3_4pf3y"]
+[ext_resource type="Texture2D" uid="uid://73vkg32kiv6" path="res://Assets/Sprites/Fondos/Escena 1/cielo 1.png" id="3_hukud"]
+[ext_resource type="Texture2D" uid="uid://c4j8n2vfgnwbb" path="res://Assets/Sprites/Fondos/Escena 1/cielo 2.png" id="4_3iuyc"]
+[ext_resource type="Texture2D" uid="uid://d3635d7iygepy" path="res://Assets/Sprites/Fondos/Escena 1/nube 2.png" id="4_p3u5y"]
+[ext_resource type="Texture2D" uid="uid://bb3nwi0htkrls" path="res://Assets/Sprites/Fondos/Escena 1/nube 1.png" id="5_5ngq0"]
+[ext_resource type="Texture2D" uid="uid://btdajbiy4bbio" path="res://Assets/Sprites/Fondos/Escena 1/mar 3.png" id="6_ga2r4"]
+[ext_resource type="Texture2D" uid="uid://c5mq5ht4rq5es" path="res://Assets/Sprites/Fondos/Escena 1/edificio 1.png" id="7_5s1p2"]
+[ext_resource type="Texture2D" uid="uid://b2puleft1gt8q" path="res://Assets/Sprites/Fondos/Escena 1/mar 1.png" id="8_cushe"]
+[ext_resource type="Texture2D" uid="uid://ccmr2lqhg4ldv" path="res://Assets/Sprites/Fondos/Escena 1/edificio 2.png" id="8_v7fwo"]
+[ext_resource type="Texture2D" uid="uid://ctpd8x0nf2323" path="res://Assets/Sprites/Fondos/Escena 1/interior super.png" id="9_8fa1w"]
+[ext_resource type="Texture2D" uid="uid://boblgaqknufp4" path="res://Assets/Sprites/Fondos/Escena 1/mar 2.png" id="9_cfsak"]
+[ext_resource type="PackedScene" uid="uid://dwq5crr067qbo" path="res://Scenes/Characters/interaction_point.tscn" id="10_dsep4"]
+[ext_resource type="Texture2D" uid="uid://6ad51021n5lx" path="res://Assets/Sprites/Fondos/Escena 1/puerta 1.png" id="10_ovu5h"]
+[ext_resource type="Texture2D" uid="uid://dv0wlcs2o6ijd" path="res://Assets/Sprites/Fondos/Escena 1/puerta 2.png" id="11_vluad"]
+[ext_resource type="Texture2D" uid="uid://bwqbji2wpppac" path="res://Assets/Sprites/Fondos/Escena 1/fondo 1.png" id="12_c0iq3"]
+[ext_resource type="Texture2D" uid="uid://kadcdwe1fd0g" path="res://Assets/Sprites/UI/interaccion.png" id="17_hovkp"]
+[ext_resource type="PackedScene" uid="uid://w7prj0lycfqv" path="res://Scenes/Obstacle.tscn" id="18_600rl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gx4fr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_hukud")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3iuyc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4pf3y")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4rw45"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_cushe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_cfsak")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ga2r4")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Overworld" type="Node2D" node_paths=PackedStringArray("player_pos")]
+script = ExtResource("1_7d7yd")
+player_pos = NodePath("Player Position")
+bg_music = "Overworld.ogg"
+level_bounds = Rect2(0, 0, 14500, 1080)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("")
+
+[node name="Background" type="Node2D" parent="."]
+position = Vector2(10689, -8)
+scale = Vector2(3.3, 3.3)
+
+[node name="Sky" type="Node2D" parent="Background"]
+position = Vector2(-960, 0)
+
+[node name="Sun" type="AnimatedSprite2D" parent="Background/Sky"]
+position = Vector2(-170, 50)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_gx4fr")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.939437
+
+[node name="Clouds 1" type="Sprite2D" parent="Background/Sky"]
+position = Vector2(-595.151, 61.5152)
+scale = Vector2(-0.3, 0.3)
+texture = ExtResource("4_p3u5y")
+
+[node name="Clouds 2" type="Sprite2D" parent="Background/Sky"]
+position = Vector2(300.303, 62.7273)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_5ngq0")
+
+[node name="Sea" type="AnimatedSprite2D" parent="Background/Sky"]
+position = Vector2(-120, 173.03)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_4rw45")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.0866365
+
+[node name="Builds" type="Node2D" parent="Background"]
+
+[node name="Build 1" type="Sprite2D" parent="Background/Builds"]
+position = Vector2(-1698.48, 48.4849)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_5s1p2")
+
+[node name="Build 2" type="Sprite2D" parent="Background/Builds"]
+position = Vector2(-490, 48)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("8_v7fwo")
+
+[node name="Super Interior" type="Node2D" parent="Background"]
+position = Vector2(5.45455, -3.93939)
+
+[node name="Interior" type="Sprite2D" parent="Background/Super Interior"]
+position = Vector2(428, 130)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("9_8fa1w")
+
+[node name="Doors" type="Node2D" parent="Background/Super Interior"]
+position = Vector2(-5.45455, 3.93939)
+
+[node name="Door Left" type="Sprite2D" parent="Background/Super Interior/Doors"]
+position = Vector2(382, 130)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("10_ovu5h")
+
+[node name="Door Right" type="Sprite2D" parent="Background/Super Interior/Doors"]
+position = Vector2(484, 130)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("11_vluad")
+
+[node name="Bridge" type="Node2D" parent="Background"]
+position = Vector2(600, 0)
+
+[node name="Bridge" type="Sprite2D" parent="Background/Bridge"]
+position = Vector2(-1800, 166)
+scale = Vector2(0.30303, 0.30303)
+texture = ExtResource("12_c0iq3")
+
+[node name="Player Position" type="Marker2D" parent="."]
+position = Vector2(12118, 780)
+
+[node name="InteractionPoint0" parent="." instance=ExtResource("10_dsep4")]
+z_index = 1
+position = Vector2(12120, 948)
+scale = Vector2(3.3, 3.3)
+dialogue_act = 1
+dialogue_line = 1
+interaction_type = "Trigger"
+interaction_texture = ExtResource("17_hovkp")
+
+[node name="InteractionPoint1" parent="." instance=ExtResource("10_dsep4")]
+z_index = 1
+position = Vector2(14250, 948)
+scale = Vector2(3.3, 3.3)
+dialogue_act = 1
+dialogue_line = 2
+interaction_type = "Dialogue"
+interaction_texture = ExtResource("17_hovkp")
+
+[node name="InteractionPoint2" parent="." instance=ExtResource("10_dsep4")]
+z_index = 1
+position = Vector2(6700, 948)
+scale = Vector2(3.3, 3.3)
+dialogue_act = 1
+dialogue_line = 3
+interaction_type = "Trigger"
+interaction_texture = ExtResource("17_hovkp")
+
+[node name="InteractionPoint3" parent="." instance=ExtResource("10_dsep4")]
+z_index = 1
+position = Vector2(3000, 948)
+scale = Vector2(3.3, 3.3)
+dialogue_act = 1
+dialogue_line = 4
+interaction_type = "Trigger"
+interaction_texture = ExtResource("17_hovkp")
+
+[node name="InteractionPoint4" parent="." instance=ExtResource("10_dsep4")]
+z_index = 1
+position = Vector2(350, 947)
+scale = Vector2(3.3, 3.3)
+interaction_type = "Scene"
+interaction_texture = ExtResource("17_hovkp")
+scene_name = "METRO"
+
+[node name="Obstacle" parent="." instance=ExtResource("18_600rl")]
+position = Vector2(14600, 640)
+
+[node name="Obstacle2" parent="." instance=ExtResource("18_600rl")]
+position = Vector2(0, 640)

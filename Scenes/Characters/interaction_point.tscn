@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwq5crr067qbo"]
+
+[ext_resource type="Script" path="res://Scripts/interaction_point.gd" id="1_ara81"]
+[ext_resource type="Texture2D" uid="uid://kadcdwe1fd0g" path="res://Assets/Sprites/UI/interaccion.png" id="2_6mso5"]
+[ext_resource type="FontFile" uid="uid://cvaih4g641j8u" path="res://Assets/Fonts/UI.ttf" id="3_ixdgg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_poyef"]
+size = Vector2(66, 62)
+
+[node name="InteractionPoint" type="Area2D"]
+script = ExtResource("1_ara81")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_poyef")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(0, -150)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_6mso5")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -57.0
+offset_top = -245.0
+offset_right = 57.0
+offset_bottom = -218.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_fonts/font = ExtResource("3_ixdgg")
+theme_override_font_sizes/font_size = 27
+text = "METRO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

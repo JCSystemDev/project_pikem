@@ -1,0 +1,101 @@
+[
+	{
+		"act_number":1,
+		"lines":[
+			{
+				"line_number":1,
+				"name":"PIKEM",
+				"emotion":"res://Assets/Sprites/Pikem/Portrait Pikem Happy.png",
+				"line":"Ya compré todo, es hora de ir a casa."
+			},
+			{
+				"line_number":2,
+				"name":"PIKEM",
+				"emotion":"res://Assets/Sprites/Pikem/Portrait Pikem Normal.png",
+				"line":"No puedo pasar por aquí."
+			},
+			{
+				"line_number":3,
+				"name":"PIKEM",
+				"emotion":"res://Assets/Sprites/Pikem/Portrait Pikem Normal.png",
+				"line":"Es muy tarde. Mejor me apresuro al metro."
+			},
+			{
+				"line_number":4,
+				"name":"PIKEM",
+				"emotion":"res://Assets/Sprites/Pikem/Portrait Pikem Crying.png",
+				"line":"Es peligroso de noche, debo volver rápido."
+			}
+		]
+	},
+	{
+		"act_number":2,
+		"lines":[
+			{
+				"line_number":1,
+				"name":"PIKEM",
+				"emotion":"res://Assets/Sprites/Pikem/Portrait Pikem Normal.png",
+				"line":"El metro llegará pronto. Tengo que esperarlo."
+			},
+			{
+				"line_number":2,
+				"name":"PIKEM",
+				"emotion":"res://Assets/Sprites/Pikem/Portrait Pikem Happy.png",
+				"line":"Esa película se ve interesante. Cuando salga iré a verla."
+			}
+		]
+		
+	},
+	{
+		"act_number":3,
+		"lines":[
+			{
+				"line_number":1,
+				"name":"PIKEM",
+				"emotion":"normal",
+				"npc_name":"none",
+				"npc_emotion":"normal",
+				"line":"zzz... (Se ha dormido)"
+			}
+		]
+		
+	},
+	{
+		"act_number":4,
+		"lines":[
+			{
+				"line_number":1,
+				"name":"PIKEM",
+				"emotion":"normal",
+				"npc_name":"none",
+				"npc_emotion":"normal",
+				"line":"¡NO PUEDE SER!. ¡ME QUEDÉ DORMIDO!"
+			},
+			{
+				"line_number":2,
+				"name":"PIKEM",
+				"emotion":"normal",
+				"npc_name":"none",
+				"npc_emotion":"normal",
+				"line":"¡¿DÓNDE ESTAN MIS COSAS?!. ¡NO LAS ENCUENTRO!"
+			},
+			{
+				"line_number":3,
+				"name":"PIKEM",
+				"emotion":"normal",
+				"npc_name":"none",
+				"npc_emotion":"normal",
+				"line":"Debo salir de aquí, debo volver a casa de alguna forma."
+			},
+			{
+				"line_number":4,
+				"name":"PIKEM",
+				"emotion":"normal",
+				"npc_name":"none",
+				"npc_emotion":"normal",
+				"line":"Es muy tarde, no puedo esperar a que el metro vuelva a funcionar."
+			}
+		]
+		
+	}
+]

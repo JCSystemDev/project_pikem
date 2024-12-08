@@ -2,5 +2,11 @@
 
 [ext_resource type="Script" path="res://Scripts/audio.gd" id="1_6ryip"]
 
-[node name="Audio" type="Node2D"]
+[node name="Audio Player" type="Node2D"]
 script = ExtResource("1_6ryip")
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+bus = &"Music"

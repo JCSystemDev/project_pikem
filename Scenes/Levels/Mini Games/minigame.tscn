@@ -1,8 +1,70 @@
-[gd_scene load_steps=2 format=3 uid="uid://c2agbvcr8vxjp"]
+[gd_scene load_steps=10 format=3 uid="uid://c2agbvcr8vxjp"]
 
 [ext_resource type="PackedScene" uid="uid://dygpg1oyagqvd" path="res://Scenes/Characters/player_pixel.tscn" id="1_ylxee"]
+[ext_resource type="Texture2D" uid="uid://b5kb1wl6e6ljg" path="res://Assets/Sprites/Dog Pixel/Dog Idle1.png" id="2_18gmu"]
+[ext_resource type="Texture2D" uid="uid://dkik2kxyrs0k2" path="res://Assets/Sprites/Dog Pixel/Dog Idle2.png" id="3_w37kc"]
+[ext_resource type="Texture2D" uid="uid://lhk8quue2eaf" path="res://Assets/Sprites/Dog Pixel/Dog Idle3.png" id="4_ms3s7"]
+[ext_resource type="Texture2D" uid="uid://cfd07vn4nb43i" path="res://Assets/Sprites/Dog Pixel/Dog Idle4.png" id="5_q50jm"]
+[ext_resource type="Script" path="res://Scripts/enemy_pixel.gd" id="6_4djrf"]
+
+[sub_resource type="Curve2D" id="Curve2D_1kmnf"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1720, 0, 0, 0, 0, 0, -1720, 900, 0, 0, 0, 0, 0, 900, 0, 0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3h5dd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_18gmu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_w37kc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ms3s7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_q50jm")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5htc0"]
+size = Vector2(76, 109)
 
 [node name="Minigame" type="Node2D"]
+
+[node name="TextureRect" type="ColorRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.118289, 1.08174e-05, 0.118288, 1)
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(1814, 85)
+curve = SubResource("Curve2D_1kmnf")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+rotation = 3.14159
+rotates = false
+
+[node name="Enemy_Pixel" type="CharacterBody2D" parent="Path2D/PathFollow2D"]
+rotation = 3.14159
+script = ExtResource("6_4djrf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Path2D/PathFollow2D/Enemy_Pixel"]
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_3h5dd")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.588599
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Enemy_Pixel"]
+position = Vector2(-12, -2.5)
+shape = SubResource("RectangleShape2D_5htc0")
 
 [node name="Player_Pixel" parent="." instance=ExtResource("1_ylxee")]
 position = Vector2(960, 540)

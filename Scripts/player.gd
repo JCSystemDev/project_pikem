@@ -1,12 +1,18 @@
 extends CharacterBody2D
 
-const SPEED = 300.0
+const SPEED = 500
 @onready var anim = $AnimatedSprite2D
+@onready var camera: Camera2D = $Camera2D
+@onready var collision: CollisionShape2D = $CollisionShape2D
 
-func _physics_process(delta: float) -> void:
+func _ready():
+	await get_tree().create_timer(1.5).timeout
+	collision.disabled = false
+
+func _physics_process(_delta):
 	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction:
-		anim.flip_h = false if direction > 0 else true
+	if direction and !DialogueManager.visible:
+		anim.flip_h = true if direction > 0 else false
 		velocity.x = direction * SPEED
 		anim.play("move")
 		

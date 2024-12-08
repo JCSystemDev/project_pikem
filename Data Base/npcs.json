@@ -1,0 +1,7 @@
+[
+	{
+		"npc_name":"Mouse",
+		"npc_avatar":"res://Assets/Sprites/NPC/Mouse Normal.png",
+		"npc_dialogue_box":"res://Assets/Sprites/UI/Mouse Textbox.png"
+	}
+]
