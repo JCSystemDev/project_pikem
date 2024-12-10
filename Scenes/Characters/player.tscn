@@ -1,20 +1,240 @@
-[gd_scene load_steps=4 format=3 uid="uid://cx1niqwd88kp4"]
+[gd_scene load_steps=19 format=3 uid="uid://cx1niqwd88kp4"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_3cp2j"]
-[ext_resource type="SpriteFrames" uid="uid://cfe7m88yubc8p" path="res://Assets/Animation/Pikem_frames.tres" id="2_6cf6s"]
+[ext_resource type="Texture2D" uid="uid://b5xibmf8dlj0b" path="res://Assets/Sprites/Pikem/Pikem Idle.png" id="2_u76mu"]
+[ext_resource type="Texture2D" uid="uid://dhkhtoikontom" path="res://Assets/Sprites/Pikem/Bolsa.png" id="3_t8aue"]
+[ext_resource type="Texture2D" uid="uid://ch1l5qh8mie5g" path="res://Assets/Sprites/Pikem/Pikem Walk 2.png" id="4_3031e"]
+[ext_resource type="Texture2D" uid="uid://dvwl12ap8v4dx" path="res://Assets/Sprites/Pikem/Sleep/Zzz 1.png" id="4_u5k8t"]
+[ext_resource type="Texture2D" uid="uid://cfcakc4h2fpmq" path="res://Assets/Sprites/Pikem/Sleep/Zzz 2.png" id="5_7e4bc"]
+[ext_resource type="Texture2D" uid="uid://cgnc3v3y2h8u3" path="res://Assets/Sprites/Pikem/Pikem Walk.png" id="5_vftt6"]
+[ext_resource type="Texture2D" uid="uid://cljsw1jj4pe8g" path="res://Assets/Sprites/Pikem/Sleep/Zzz 3.png" id="6_6db7k"]
+[ext_resource type="Texture2D" uid="uid://crh72x558v4ak" path="res://Assets/Sprites/Pikem/Sleep/Sleep 1B.png" id="6_13mtv"]
+[ext_resource type="Texture2D" uid="uid://bsw2pwlje41xd" path="res://Assets/Sprites/Pikem/Sleep/Sleep 2B.png" id="7_xm2pg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1eww4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_u5k8t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7e4bc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_6db7k")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 3.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dqyc4"]
 size = Vector2(236, 196)
+
+[sub_resource type="Animation" id="Animation_88fjm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pikem:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_u76mu")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pikem/Bag:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 24)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pikem/Zzz:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_gmgli"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pikem:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_u76mu")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pikem/Bag:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 24)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pikem/Zzz:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_rufui"]
+resource_name = "move"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pikem:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("4_3031e"), ExtResource("5_vftt6"), ExtResource("5_vftt6")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pikem/Bag:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 24.2857)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pikem/Zzz:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_bui7g"]
+resource_name = "sleep"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pikem:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.46667, 3, 3.5, 4, 4.5, 5, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("6_13mtv"), ExtResource("7_xm2pg"), ExtResource("6_13mtv"), ExtResource("7_xm2pg"), ExtResource("6_13mtv"), ExtResource("7_xm2pg"), ExtResource("7_xm2pg"), ExtResource("7_xm2pg")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pikem/Bag:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 117.143), Vector2(0, 117.143)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pikem/Zzz:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_q28wc"]
+resource_name = "sleeping"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pikem:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_xm2pg")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pemcu"]
+_data = {
+"RESET": SubResource("Animation_88fjm"),
+"idle": SubResource("Animation_gmgli"),
+"move": SubResource("Animation_rufui"),
+"sleep": SubResource("Animation_bui7g"),
+"sleeping": SubResource("Animation_q28wc")
+}
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_mask = 2
 script = ExtResource("1_3cp2j")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Pikem" type="Sprite2D" parent="."]
 scale = Vector2(0.7, 0.7)
-sprite_frames = ExtResource("2_6cf6s")
-animation = &"move"
-frame_progress = 0.911574
+texture = ExtResource("2_u76mu")
+
+[node name="Bag" type="Sprite2D" parent="Pikem"]
+position = Vector2(0, 24)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_t8aue")
+
+[node name="Zzz" type="AnimatedSprite2D" parent="Pikem"]
+visible = false
+position = Vector2(-305.714, -58.5714)
+sprite_frames = SubResource("SpriteFrames_1eww4")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.00634112
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-18, 40)
@@ -22,3 +242,8 @@ shape = SubResource("RectangleShape2D_dqyc4")
 disabled = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_pemcu")
+}

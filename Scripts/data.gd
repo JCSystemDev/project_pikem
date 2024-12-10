@@ -5,6 +5,10 @@ var dialogues = JSON.parse_string(FileAccess.get_file_as_string("res://Data Base
 var npcs = JSON.parse_string(FileAccess.get_file_as_string("res://Data Base/npcs.json"))
 
 # Variables
+var train: bool = false
+var stolen: bool = false
+var player_control: bool = true
+var event_name: String
 var first_time: bool = true
 var current_line: String
 var current_texture: Texture2D

@@ -1,0 +1,86 @@
+[gd_scene load_steps=7 format=3 uid="uid://dkduwbmoxbhn3"]
+
+[ext_resource type="Script" path="res://Scripts/level.gd" id="1_4tje1"]
+[ext_resource type="Texture2D" uid="uid://jh24xue38u16" path="res://Assets/Sprites/Backgrounds/ESCENA 2/metro 2.png" id="2_peeuf"]
+[ext_resource type="Texture2D" uid="uid://5ydt8rqckm1a" path="res://Assets/Sprites/Backgrounds/ESCENA 2/baranda 2.png" id="3_r8dp0"]
+[ext_resource type="PackedScene" uid="uid://dwq5crr067qbo" path="res://Scenes/Characters/interaction_point.tscn" id="4_4ry5i"]
+[ext_resource type="Texture2D" uid="uid://kadcdwe1fd0g" path="res://Assets/Sprites/UI/interaccion.png" id="5_may1l"]
+[ext_resource type="PackedScene" uid="uid://w7prj0lycfqv" path="res://Scenes/Obstacle.tscn" id="6_5r8d1"]
+
+[node name="Underground2" type="Node2D" node_paths=PackedStringArray("player_pos")]
+script = ExtResource("1_4tje1")
+player_pos = NodePath("Player Position")
+bg_music = "Silence.ogg"
+level_bounds = Rect2(0, 0, 4990, 1080)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("")
+
+[node name="Background" type="Node2D" parent="."]
+position = Vector2(3075, 0)
+scale = Vector2(3.3, 3.3)
+
+[node name="Subway" type="Node2D" parent="Background"]
+position = Vector2(600, 0)
+
+[node name="Subway" type="Sprite2D" parent="Background/Subway"]
+position = Vector2(-774.909, 163.576)
+scale = Vector2(0.30303, 0.30303)
+texture = ExtResource("2_peeuf")
+
+[node name="Railing" type="Sprite2D" parent="Background/Subway"]
+z_index = 1
+position = Vector2(-1262.42, 244.242)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_r8dp0")
+
+[node name="Player Position" type="Marker2D" parent="."]
+position = Vector2(4096, 740)
+gizmo_extents = 25.0
+
+[node name="InteractionPoint0" parent="." instance=ExtResource("4_4ry5i")]
+position = Vector2(3859, 778)
+scale = Vector2(3.3, 3.3)
+dialogue_act = 4
+dialogue_line = 1
+interaction_type = "Trigger"
+interaction_texture = ExtResource("5_may1l")
+
+[node name="InteractionPoint1" parent="." instance=ExtResource("4_4ry5i")]
+position = Vector2(3276, 768)
+scale = Vector2(3.3, 3.3)
+dialogue_act = 4
+dialogue_line = 2
+interaction_type = "Trigger"
+interaction_texture = ExtResource("5_may1l")
+
+[node name="InteractionPoint4" parent="." instance=ExtResource("4_4ry5i")]
+position = Vector2(2541, 768)
+scale = Vector2(3.3, 3.3)
+dialogue_act = 4
+dialogue_line = 3
+interaction_type = "Trigger"
+interaction_texture = ExtResource("5_may1l")
+
+[node name="InteractionPoint2" parent="." instance=ExtResource("4_4ry5i")]
+position = Vector2(658, 889)
+scale = Vector2(3.3, 3.3)
+dialogue_act = 1
+dialogue_line = 1
+interaction_type = "Scene"
+interaction_texture = ExtResource("5_may1l")
+scene_name = "SALIDA"
+
+[node name="InteractionPoint3" parent="." instance=ExtResource("4_4ry5i")]
+position = Vector2(4508, 777)
+scale = Vector2(3.3, 3.3)
+dialogue_act = 4
+dialogue_line = 4
+interaction_type = "Dialogue"
+interaction_texture = ExtResource("5_may1l")
+
+[node name="Obstacle" parent="." instance=ExtResource("6_5r8d1")]
+position = Vector2(4818, 637)
+
+[node name="Obstacle2" parent="." instance=ExtResource("6_5r8d1")]
+position = Vector2(300, 640)

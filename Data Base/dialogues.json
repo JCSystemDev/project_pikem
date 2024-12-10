@@ -52,9 +52,7 @@
 			{
 				"line_number":1,
 				"name":"PIKEM",
-				"emotion":"normal",
-				"npc_name":"none",
-				"npc_emotion":"normal",
+				"emotion":"res://Assets/Sprites/Pikem/Portrait Pikem None.png",
 				"line":"zzz... (Se ha dormido)"
 			}
 		]
@@ -68,31 +66,25 @@
 				"name":"PIKEM",
 				"emotion":"normal",
 				"npc_name":"none",
-				"npc_emotion":"normal",
+				"emotion":"res://Assets/Sprites/Pikem/Portrait Pikem Surprise.png",
 				"line":"¡NO PUEDE SER!. ¡ME QUEDÉ DORMIDO!"
 			},
 			{
 				"line_number":2,
 				"name":"PIKEM",
-				"emotion":"normal",
-				"npc_name":"none",
-				"npc_emotion":"normal",
+				"emotion":"res://Assets/Sprites/Pikem/Portrait Pikem Crying.png",
 				"line":"¡¿DÓNDE ESTAN MIS COSAS?!. ¡NO LAS ENCUENTRO!"
 			},
 			{
 				"line_number":3,
 				"name":"PIKEM",
-				"emotion":"normal",
-				"npc_name":"none",
-				"npc_emotion":"normal",
+				"emotion":"res://Assets/Sprites/Pikem/Portrait Pikem Crying.png",
 				"line":"Debo salir de aquí, debo volver a casa de alguna forma."
 			},
 			{
 				"line_number":4,
 				"name":"PIKEM",
-				"emotion":"normal",
-				"npc_name":"none",
-				"npc_emotion":"normal",
+				"emotion":"res://Assets/Sprites/Pikem/Portrait Pikem Crying.png",
 				"line":"Es muy tarde, no puedo esperar a que el metro vuelva a funcionar."
 			}
 		]

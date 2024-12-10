@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://dsvajji1mbame"]
+
+[ext_resource type="Script" path="res://Scripts/level.gd" id="1_4n524"]
+[ext_resource type="Texture2D" uid="uid://cftwla0rqsjxb" path="res://Assets/Sprites/Backgrounds/ESCENA 3/color fondo metro.png" id="2_i5yu0"]
+[ext_resource type="Texture2D" uid="uid://b040bsqj8qk1j" path="res://Assets/Sprites/Backgrounds/ESCENA 3/metro interior.png" id="2_x0caa"]
+[ext_resource type="PackedScene" uid="uid://dwq5crr067qbo" path="res://Scenes/Characters/interaction_point.tscn" id="4_hbvyu"]
+[ext_resource type="Texture2D" uid="uid://kadcdwe1fd0g" path="res://Assets/Sprites/UI/interaccion.png" id="5_c2ctc"]
+[ext_resource type="PackedScene" uid="uid://w7prj0lycfqv" path="res://Scenes/Obstacle.tscn" id="6_halip"]
+
+[node name="Train" type="Node2D" node_paths=PackedStringArray("player_pos")]
+script = ExtResource("1_4n524")
+player_pos = NodePath("Player Position")
+bg_music = "Train.ogg"
+level_bounds = Rect2(0, 0, 1920, 1080)
+
+[node name="Background" type="Node2D" parent="."]
+scale = Vector2(3.3, 3.3)
+
+[node name="Train" type="Node2D" parent="Background"]
+
+[node name="BG" type="Sprite2D" parent="Background/Train"]
+position = Vector2(290.909, 163.636)
+scale = Vector2(0.303, 0.303)
+texture = ExtResource("2_i5yu0")
+
+[node name="Interior" type="Sprite2D" parent="Background/Train"]
+position = Vector2(290.909, 163.636)
+scale = Vector2(0.303, 0.303)
+texture = ExtResource("2_x0caa")
+
+[node name="Player Position" type="Marker2D" parent="."]
+position = Vector2(1362, 880)
+gizmo_extents = 25.0
+
+[node name="InteractionPoint0" parent="." instance=ExtResource("4_hbvyu")]
+position = Vector2(888, 895)
+scale = Vector2(3.3, 3.3)
+dialogue_act = 2
+dialogue_line = 1
+interaction_type = "Event"
+interaction_texture = ExtResource("5_c2ctc")
+event_name = "Sleep"
+
+[node name="Obstacle" parent="." instance=ExtResource("6_halip")]
+position = Vector2(2050, 637)
+
+[node name="Obstacle2" parent="." instance=ExtResource("6_halip")]
+position = Vector2(-140, 640)

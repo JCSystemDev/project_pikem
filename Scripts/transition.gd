@@ -3,7 +3,10 @@ extends CanvasLayer
 var in_transition: bool
 @onready var overworld_scene: PackedScene = load("res://Scenes/Levels/overworld.tscn")
 @onready var underground_scene: PackedScene = load("res://Scenes/Levels/underground.tscn")
+@onready var train_scene: PackedScene = load("res://Scenes/Levels/train.tscn")
 @onready var memu_scene: PackedScene = load("res://Scenes/Menu/menu.tscn")
+@onready var underground_scene2: PackedScene = load("res://Scenes/Levels/underground2.tscn")
+@onready var overworld_scene2: PackedScene = load("res://Scenes/Levels/overworld2.tscn")
 
 @onready var crossfade = $Crossfade
 @onready var animation_player = $AnimationPlayer

@@ -33,7 +33,6 @@ func _on_start_pressed():
 	tween3.tween_property(pikem, "position", Vector2(0, 72), 0.25)
 	await get_tree().create_timer(0.25).timeout
 	pikem_anim.play("Idle")
-	pikem_anim.animation_finished
 	await get_tree().create_timer(0.25).timeout
 	TransitionManager.load_scene(TransitionManager.overworld_scene, "Transition")
 	

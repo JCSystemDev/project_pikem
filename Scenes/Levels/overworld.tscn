@@ -1,21 +1,21 @@
 [gd_scene load_steps=21 format=3 uid="uid://b3224jaup81g6"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_7d7yd"]
-[ext_resource type="Texture2D" uid="uid://cq26e6nj7rim5" path="res://Assets/Sprites/Fondos/Escena 1/cielo 3.png" id="3_4pf3y"]
-[ext_resource type="Texture2D" uid="uid://73vkg32kiv6" path="res://Assets/Sprites/Fondos/Escena 1/cielo 1.png" id="3_hukud"]
-[ext_resource type="Texture2D" uid="uid://c4j8n2vfgnwbb" path="res://Assets/Sprites/Fondos/Escena 1/cielo 2.png" id="4_3iuyc"]
-[ext_resource type="Texture2D" uid="uid://d3635d7iygepy" path="res://Assets/Sprites/Fondos/Escena 1/nube 2.png" id="4_p3u5y"]
-[ext_resource type="Texture2D" uid="uid://bb3nwi0htkrls" path="res://Assets/Sprites/Fondos/Escena 1/nube 1.png" id="5_5ngq0"]
-[ext_resource type="Texture2D" uid="uid://btdajbiy4bbio" path="res://Assets/Sprites/Fondos/Escena 1/mar 3.png" id="6_ga2r4"]
-[ext_resource type="Texture2D" uid="uid://c5mq5ht4rq5es" path="res://Assets/Sprites/Fondos/Escena 1/edificio 1.png" id="7_5s1p2"]
-[ext_resource type="Texture2D" uid="uid://b2puleft1gt8q" path="res://Assets/Sprites/Fondos/Escena 1/mar 1.png" id="8_cushe"]
-[ext_resource type="Texture2D" uid="uid://ccmr2lqhg4ldv" path="res://Assets/Sprites/Fondos/Escena 1/edificio 2.png" id="8_v7fwo"]
-[ext_resource type="Texture2D" uid="uid://ctpd8x0nf2323" path="res://Assets/Sprites/Fondos/Escena 1/interior super.png" id="9_8fa1w"]
-[ext_resource type="Texture2D" uid="uid://boblgaqknufp4" path="res://Assets/Sprites/Fondos/Escena 1/mar 2.png" id="9_cfsak"]
+[ext_resource type="Texture2D" uid="uid://cq26e6nj7rim5" path="res://Assets/Sprites/Backgrounds/Escena 1/cielo 3.png" id="3_4pf3y"]
+[ext_resource type="Texture2D" uid="uid://73vkg32kiv6" path="res://Assets/Sprites/Backgrounds/Escena 1/cielo 1.png" id="3_hukud"]
+[ext_resource type="Texture2D" uid="uid://c4j8n2vfgnwbb" path="res://Assets/Sprites/Backgrounds/Escena 1/cielo 2.png" id="4_3iuyc"]
+[ext_resource type="Texture2D" uid="uid://d3635d7iygepy" path="res://Assets/Sprites/Backgrounds/Escena 1/nube 2.png" id="4_p3u5y"]
+[ext_resource type="Texture2D" uid="uid://bb3nwi0htkrls" path="res://Assets/Sprites/Backgrounds/Escena 1/nube 1.png" id="5_5ngq0"]
+[ext_resource type="Texture2D" uid="uid://btdajbiy4bbio" path="res://Assets/Sprites/Backgrounds/Escena 1/mar 3.png" id="6_ga2r4"]
+[ext_resource type="Texture2D" uid="uid://c5mq5ht4rq5es" path="res://Assets/Sprites/Backgrounds/Escena 1/edificio 1.png" id="7_5s1p2"]
+[ext_resource type="Texture2D" uid="uid://b2puleft1gt8q" path="res://Assets/Sprites/Backgrounds/Escena 1/mar 1.png" id="8_cushe"]
+[ext_resource type="Texture2D" uid="uid://ccmr2lqhg4ldv" path="res://Assets/Sprites/Backgrounds/Escena 1/edificio 2.png" id="8_v7fwo"]
+[ext_resource type="Texture2D" uid="uid://ctpd8x0nf2323" path="res://Assets/Sprites/Backgrounds/Escena 1/interior super.png" id="9_8fa1w"]
+[ext_resource type="Texture2D" uid="uid://boblgaqknufp4" path="res://Assets/Sprites/Backgrounds/Escena 1/mar 2.png" id="9_cfsak"]
 [ext_resource type="PackedScene" uid="uid://dwq5crr067qbo" path="res://Scenes/Characters/interaction_point.tscn" id="10_dsep4"]
-[ext_resource type="Texture2D" uid="uid://6ad51021n5lx" path="res://Assets/Sprites/Fondos/Escena 1/puerta 1.png" id="10_ovu5h"]
-[ext_resource type="Texture2D" uid="uid://dv0wlcs2o6ijd" path="res://Assets/Sprites/Fondos/Escena 1/puerta 2.png" id="11_vluad"]
-[ext_resource type="Texture2D" uid="uid://bwqbji2wpppac" path="res://Assets/Sprites/Fondos/Escena 1/fondo 1.png" id="12_c0iq3"]
+[ext_resource type="Texture2D" uid="uid://6ad51021n5lx" path="res://Assets/Sprites/Backgrounds/Escena 1/puerta 1.png" id="10_ovu5h"]
+[ext_resource type="Texture2D" uid="uid://dv0wlcs2o6ijd" path="res://Assets/Sprites/Backgrounds/Escena 1/puerta 2.png" id="11_vluad"]
+[ext_resource type="Texture2D" uid="uid://bwqbji2wpppac" path="res://Assets/Sprites/Backgrounds/Escena 1/fondo 1.png" id="12_c0iq3"]
 [ext_resource type="Texture2D" uid="uid://kadcdwe1fd0g" path="res://Assets/Sprites/UI/interaccion.png" id="17_hovkp"]
 [ext_resource type="PackedScene" uid="uid://w7prj0lycfqv" path="res://Scenes/Obstacle.tscn" id="18_600rl"]
 
@@ -181,10 +181,10 @@ position = Vector2(350, 947)
 scale = Vector2(3.3, 3.3)
 interaction_type = "Scene"
 interaction_texture = ExtResource("17_hovkp")
-scene_name = "METRO"
+scene_name = "ENTRADA"
 
 [node name="Obstacle" parent="." instance=ExtResource("18_600rl")]
-position = Vector2(14600, 640)
+position = Vector2(14550, 640)
 
 [node name="Obstacle2" parent="." instance=ExtResource("18_600rl")]
-position = Vector2(0, 640)
+position = Vector2(50, 640)

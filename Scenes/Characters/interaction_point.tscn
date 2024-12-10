@@ -19,14 +19,15 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_6mso5")
 
 [node name="Label" type="Label" parent="."]
-offset_left = -57.0
-offset_top = -245.0
-offset_right = 57.0
-offset_bottom = -218.0
+offset_left = -84.0
+offset_top = -261.0
+offset_right = 84.0
+offset_bottom = -207.0
+theme_override_colors/font_color = Color(1, 0.643137, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_x = 2
 theme_override_fonts/font = ExtResource("3_ixdgg")
-theme_override_font_sizes/font_size = 27
+theme_override_font_sizes/font_size = 54
 text = "METRO"
 horizontal_alignment = 1
 vertical_alignment = 1

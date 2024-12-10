@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://c1dnfq1iiydyh"]
+[gd_scene load_steps=9 format=3 uid="uid://c1dnfq1iiydyh"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_p1wkp"]
-[ext_resource type="Texture2D" uid="uid://cekebfcycrauh" path="res://Assets/Sprites/Fondos/ESCENA 2/metro.png" id="2_41jjb"]
-[ext_resource type="Texture2D" uid="uid://bdjhgno5vyyfw" path="res://Assets/Sprites/Fondos/ESCENA 2/baranda.png" id="3_gio0n"]
+[ext_resource type="Texture2D" uid="uid://cekebfcycrauh" path="res://Assets/Sprites/Backgrounds/ESCENA 2/metro.png" id="2_41jjb"]
+[ext_resource type="Texture2D" uid="uid://bdjhgno5vyyfw" path="res://Assets/Sprites/Backgrounds/ESCENA 2/baranda.png" id="3_gio0n"]
+[ext_resource type="Texture2D" uid="uid://brjrjyrhs5qlm" path="res://Assets/Sprites/Backgrounds/ESCENA 2/vagon extremo 1.png" id="4_71stn"]
 [ext_resource type="PackedScene" uid="uid://dwq5crr067qbo" path="res://Scenes/Characters/interaction_point.tscn" id="4_gq23s"]
+[ext_resource type="Texture2D" uid="uid://ch5ni1ju78u68" path="res://Assets/Sprites/Backgrounds/ESCENA 2/vagon extremo 2.png" id="5_mauei"]
 [ext_resource type="Texture2D" uid="uid://kadcdwe1fd0g" path="res://Assets/Sprites/UI/interaccion.png" id="5_u3hxw"]
 [ext_resource type="PackedScene" uid="uid://w7prj0lycfqv" path="res://Scenes/Obstacle.tscn" id="6_nmgls"]
 
@@ -12,9 +14,6 @@ script = ExtResource("1_p1wkp")
 player_pos = NodePath("Player Position")
 bg_music = "Underground.ogg"
 level_bounds = Rect2(0, 0, 4990, 1080)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("")
 
 [node name="Background" type="Node2D" parent="."]
 position = Vector2(3075, 0)
@@ -34,16 +33,30 @@ position = Vector2(-286.666, 246.061)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_gio0n")
 
+[node name="Train" type="Node2D" parent="Background" groups=["Train"]]
+
+[node name="End" type="Sprite2D" parent="Background/Train"]
+z_index = 1
+position = Vector2(1381.52, 161.818)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_71stn")
+
+[node name="Mid" type="Sprite2D" parent="Background/Train"]
+z_index = 1
+position = Vector2(2967.29, 161.818)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_mauei")
+
 [node name="Player Position" type="Marker2D" parent="."]
-position = Vector2(4200, 740)
+position = Vector2(3825, 740)
 gizmo_extents = 25.0
 
 [node name="InteractionPoint0" parent="." instance=ExtResource("4_gq23s")]
-position = Vector2(4200, 780)
+position = Vector2(4366, 780)
 scale = Vector2(3.3, 3.3)
 dialogue_act = 2
 dialogue_line = 1
-interaction_type = "Trigger"
+interaction_type = "Dialogue"
 interaction_texture = ExtResource("5_u3hxw")
 
 [node name="InteractionPoint1" parent="." instance=ExtResource("4_gq23s")]
@@ -54,8 +67,17 @@ dialogue_line = 2
 interaction_type = "Dialogue"
 interaction_texture = ExtResource("5_u3hxw")
 
+[node name="InteractionPoint2" parent="." instance=ExtResource("4_gq23s")]
+position = Vector2(793, 764)
+scale = Vector2(3.3, 3.3)
+dialogue_act = 1
+dialogue_line = 1
+interaction_type = "Event"
+interaction_texture = ExtResource("5_u3hxw")
+event_name = "Train"
+
 [node name="Obstacle" parent="." instance=ExtResource("6_nmgls")]
-position = Vector2(4990, 640)
+position = Vector2(4690, 637)
 
 [node name="Obstacle2" parent="." instance=ExtResource("6_nmgls")]
-position = Vector2(0, 640)
+position = Vector2(129, 640)

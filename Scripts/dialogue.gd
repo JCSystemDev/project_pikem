@@ -20,11 +20,13 @@ func _input(event):
 	
 func _play_dialogue_box():
 	if !dialogue_screen.visible:
+		DataManager.player_control = false
 		in_dialogue = true
 		dialogue_screen.show()
 		if DataManager.current_name == "PIKEM":
-			AudioManager.play_sound("Meow.mp3")
-			TweenManager._jump_tween(pikem)
+			if DataManager.event_name != "Sleep":
+				AudioManager.play_sound("Meow.mp3")
+				TweenManager._jump_tween(pikem)
 		dialogue_animation.play("write_text")
 		await dialogue_animation.animation_finished
 		arrow.show()
@@ -37,6 +39,11 @@ func _load_dialogue_box(_line: String, _name: String, _texture: Texture2D):
 	
 func _close_dialogue():
 	if !in_dialogue:
-		arrow.hide()
-		dialogue_screen.hide()
-		
+		if DataManager.event_name != "Sleep":
+			arrow.hide()
+			dialogue_screen.hide()
+			DataManager.player_control = true
+		elif DataManager.event_name == "Sleep":
+			arrow.hide()
+			dialogue_screen.hide()
+			TransitionManager.load_scene(TransitionManager.underground_scene2, "Transition")

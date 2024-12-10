@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://dygpg1oyagqvd"]
 
 [ext_resource type="Script" path="res://Scripts/player_pixel.gd" id="1_1knfl"]
-[ext_resource type="Texture2D" uid="uid://batsoaws5kjae" path="res://Assets/Sprites/Pikem/Pikem_Pixel.png" id="2_3no1r"]
+[ext_resource type="Texture2D" uid="uid://batsoaws5kjae" path="res://Assets/Sprites/Pikem/Pikem_Sprite_Sheet.png" id="2_3no1r"]
 [ext_resource type="Texture2D" uid="uid://bbaqcvrfq4brr" path="res://Assets/Sprites/Pikem/VFX Meow.png" id="3_huv0r"]
 
 [sub_resource type="Animation" id="Animation_dp75j"]

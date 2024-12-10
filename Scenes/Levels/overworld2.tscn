@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://tu3ja6yh7gwc"]
+
+[ext_resource type="Script" path="res://Scripts/level.gd" id="1_05lh4"]
+[ext_resource type="Texture2D" uid="uid://b11w1y0ueb0up" path="res://Assets/Sprites/Backgrounds/ESCENA 3/fondo 1.png" id="2_88va7"]
+[ext_resource type="Texture2D" uid="uid://b3r8cesg01gpi" path="res://Assets/Sprites/Backgrounds/ESCENA 3/reja.png" id="3_yu7v2"]
+[ext_resource type="PackedScene" uid="uid://dwq5crr067qbo" path="res://Scenes/Characters/interaction_point.tscn" id="4_7hntl"]
+[ext_resource type="Texture2D" uid="uid://kadcdwe1fd0g" path="res://Assets/Sprites/UI/interaccion.png" id="5_60u4m"]
+[ext_resource type="PackedScene" uid="uid://w7prj0lycfqv" path="res://Scenes/Obstacle.tscn" id="6_q22hw"]
+
+[node name="Overworld2" type="Node2D" node_paths=PackedStringArray("player_pos")]
+script = ExtResource("1_05lh4")
+player_pos = NodePath("Player Position")
+bg_music = "Overworld Night.ogg"
+level_bounds = Rect2(0, 0, 4000, 1080)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("")
+
+[node name="Background" type="Node2D" parent="."]
+scale = Vector2(3.3, 3.3)
+
+[node name="Bg" type="Sprite2D" parent="Background"]
+position = Vector2(607.879, 163.637)
+scale = Vector2(0.302, 0.303)
+texture = ExtResource("2_88va7")
+
+[node name="Gate" type="Sprite2D" parent="Background"]
+position = Vector2(183.939, 150.303)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_yu7v2")
+
+[node name="Player Position" type="Marker2D" parent="."]
+position = Vector2(1223, 740)
+gizmo_extents = 25.0
+
+[node name="InteractionPoint2" parent="." instance=ExtResource("4_7hntl")]
+visible = false
+position = Vector2(992, 777)
+scale = Vector2(3.3, 3.3)
+dialogue_act = 3
+dialogue_line = 1
+interaction_type = "Dialogue"
+interaction_texture = ExtResource("5_60u4m")
+
+[node name="Obstacle" parent="." instance=ExtResource("6_q22hw")]
+position = Vector2(3824, 637)
+
+[node name="Obstacle2" parent="." instance=ExtResource("6_q22hw")]
+position = Vector2(671, 640)

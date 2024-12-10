@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://osfvjqcjerrn"
+path="res://.godot/imported/Overworld Night.ogg-874b44e489151a68a5cf7bc5476468ed.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/Overworld Night.ogg"
+dest_files=["res://.godot/imported/Overworld Night.ogg-874b44e489151a68a5cf7bc5476468ed.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
