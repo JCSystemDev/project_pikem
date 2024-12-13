@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://5ydt8rqckm1a" path="res://Assets/Sprites/Backgrounds/ESCENA 2/baranda 2.png" id="3_r8dp0"]
 [ext_resource type="PackedScene" uid="uid://dwq5crr067qbo" path="res://Scenes/Characters/interaction_point.tscn" id="4_4ry5i"]
 [ext_resource type="Texture2D" uid="uid://kadcdwe1fd0g" path="res://Assets/Sprites/UI/interaccion.png" id="5_may1l"]
-[ext_resource type="PackedScene" uid="uid://w7prj0lycfqv" path="res://Scenes/Obstacle.tscn" id="6_5r8d1"]
+[ext_resource type="PackedScene" uid="uid://w7prj0lycfqv" path="res://Scenes/obstacle.tscn" id="6_5r8d1"]
 
 [node name="Underground2" type="Node2D" node_paths=PackedStringArray("player_pos")]
 script = ExtResource("1_4tje1")

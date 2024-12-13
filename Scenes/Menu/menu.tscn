@@ -251,6 +251,7 @@ anchors_preset = 0
 script = ExtResource("1_movk4")
 
 [node name="Background" type="Node2D" parent="."]
+position = Vector2(0, -8)
 scale = Vector2(3.3, 3.3)
 
 [node name="Super Interior" type="Node2D" parent="Background"]
@@ -301,7 +302,8 @@ texture = ExtResource("12_ncacf")
 z_index = 4
 
 [node name="Logo" type="AnimatedSprite2D" parent="UI"]
-position = Vector2(679, 139)
+z_index = 1
+position = Vector2(829, 154)
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_42dey")
 animation = &"Idle"
@@ -354,20 +356,20 @@ theme_override_constants/shadow_offset_x = 20
 theme_override_constants/shadow_offset_y = 1
 theme_override_constants/outline_size = 0
 theme_override_fonts/font = ExtResource("10_86fl6")
-theme_override_font_sizes/font_size = 297
+theme_override_font_sizes/font_size = 378
 text = "PIKEM"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Subtitle" type="Label" parent="UI"]
-offset_left = 179.0
-offset_top = 384.0
-offset_right = 599.0
-offset_bottom = 492.0
+offset_left = 178.0
+offset_top = 430.0
+offset_right = 913.0
+offset_bottom = 619.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 10
 theme_override_fonts/font = ExtResource("10_86fl6")
-theme_override_font_sizes/font_size = 108
+theme_override_font_sizes/font_size = 189
 text = "BACK HOME"
 
 [connection signal="pressed" from="UI/Start" to="." method="_on_start_pressed"]

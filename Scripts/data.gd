@@ -5,14 +5,16 @@ var dialogues = JSON.parse_string(FileAccess.get_file_as_string("res://Data Base
 var npcs = JSON.parse_string(FileAccess.get_file_as_string("res://Data Base/npcs.json"))
 
 # Variables
-var train: bool = false
+var event_num: int = 0
+var mouse_dialogue: bool = false
 var stolen: bool = false
 var player_control: bool = true
 var event_name: String
-var first_time: bool = true
+var first_time: bool = false
 var current_line: String
 var current_texture: Texture2D
 var current_name: String
+var current_textbox: Texture2D
 
 # NPC Variables
 var npc_name: String
@@ -28,6 +30,7 @@ func _get_dialogue(act: int, line: int):
 					current_name = dialogue_line["name"]
 					current_line = dialogue_line["line"]
 					current_texture = load(dialogue_line["emotion"])
+					current_textbox = load(dialogue_line["textbox"])
 	
 func _get_npc_textures(_name: String):
 	for npc in npcs:

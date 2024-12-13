@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://dv0wlcs2o6ijd" path="res://Assets/Sprites/Backgrounds/Escena 1/puerta 2.png" id="11_vluad"]
 [ext_resource type="Texture2D" uid="uid://bwqbji2wpppac" path="res://Assets/Sprites/Backgrounds/Escena 1/fondo 1.png" id="12_c0iq3"]
 [ext_resource type="Texture2D" uid="uid://kadcdwe1fd0g" path="res://Assets/Sprites/UI/interaccion.png" id="17_hovkp"]
-[ext_resource type="PackedScene" uid="uid://w7prj0lycfqv" path="res://Scenes/Obstacle.tscn" id="18_600rl"]
+[ext_resource type="PackedScene" uid="uid://w7prj0lycfqv" path="res://Scenes/obstacle.tscn" id="18_600rl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gx4fr"]
 animations = [{

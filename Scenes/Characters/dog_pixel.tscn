@@ -1,0 +1,140 @@
+[gd_scene load_steps=20 format=3 uid="uid://dqicilqdwtd0q"]
+
+[ext_resource type="Script" path="res://Scripts/dog_pixel.gd" id="1_7ukx1"]
+[ext_resource type="Texture2D" uid="uid://xvjv6vag5pcy" path="res://Assets/Sprites/Dog Pixel/Dog Chase.png" id="2_3lpo1"]
+[ext_resource type="Texture2D" uid="uid://ckwt4nsddk3yr" path="res://Assets/Sprites/Dog Pixel/Dog Idle.png" id="2_h532c"]
+[ext_resource type="Texture2D" uid="uid://dytp5thhnfr6f" path="res://Assets/Sprites/Dog Pixel/Dog Patrol.png" id="4_f7jhy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dryul"]
+atlas = ExtResource("2_3lpo1")
+region = Rect2(0, 0, 92, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2jts"]
+atlas = ExtResource("2_3lpo1")
+region = Rect2(92, 0, 92, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2pfv"]
+atlas = ExtResource("2_3lpo1")
+region = Rect2(184, 0, 92, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtoyt"]
+atlas = ExtResource("2_3lpo1")
+region = Rect2(276, 0, 92, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ukpc"]
+atlas = ExtResource("2_h532c")
+region = Rect2(0, 0, 92, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8idal"]
+atlas = ExtResource("2_h532c")
+region = Rect2(92, 0, 92, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1v6nh"]
+atlas = ExtResource("2_h532c")
+region = Rect2(184, 0, 92, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tjnip"]
+atlas = ExtResource("2_h532c")
+region = Rect2(276, 0, 92, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w24yy"]
+atlas = ExtResource("4_f7jhy")
+region = Rect2(0, 0, 92, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kk0vc"]
+atlas = ExtResource("4_f7jhy")
+region = Rect2(92, 0, 92, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0wsk"]
+atlas = ExtResource("4_f7jhy")
+region = Rect2(184, 0, 92, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kxcan"]
+atlas = ExtResource("4_f7jhy")
+region = Rect2(276, 0, 92, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jbg3t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dryul")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t2jts")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r2pfv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtoyt")
+}],
+"loop": true,
+"name": &"Chase",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ukpc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8idal")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1v6nh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tjnip")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w24yy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kk0vc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0wsk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kxcan")
+}],
+"loop": true,
+"name": &"Patrol",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iv0ec"]
+size = Vector2(88, 67)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bhaoi"]
+
+[node name="Dog_Pixel" type="CharacterBody2D"]
+script = ExtResource("1_7ukx1")
+speed = 200.0
+patrol_speed = 250.0
+return_to_patrol_distance = 500.0
+patrol_points = Array[Vector2]([Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0)])
+
+[node name="Dog" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jbg3t")
+animation = &"Chase"
+autoplay = "Idle"
+frame_progress = 0.400656
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(1, 2.5)
+shape = SubResource("RectangleShape2D_iv0ec")
+
+[node name="Detection Area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection Area"]
+scale = Vector2(10, 10)
+shape = SubResource("CircleShape2D_bhaoi")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]

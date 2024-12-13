@@ -1,0 +1,159 @@
+[gd_scene load_steps=22 format=3 uid="uid://c2agbvcr8vxjp"]
+
+[ext_resource type="Script" path="res://Scripts/minigame.gd" id="1_pgsc6"]
+[ext_resource type="PackedScene" uid="uid://dygpg1oyagqvd" path="res://Scenes/Characters/player_pixel.tscn" id="1_ylxee"]
+[ext_resource type="PackedScene" uid="uid://dqicilqdwtd0q" path="res://Scenes/Characters/dog_pixel.tscn" id="3_d45r5"]
+[ext_resource type="PackedScene" uid="uid://b4uonrc3ge3dj" path="res://Scenes/coin.tscn" id="4_8fg8i"]
+[ext_resource type="FontFile" uid="uid://cvaih4g641j8u" path="res://Assets/Fonts/UI.ttf" id="5_chpxq"]
+[ext_resource type="Texture2D" uid="uid://bbsphmf8y7k8x" path="res://Assets/Sprites/UI/Caution.png" id="6_33uj5"]
+[ext_resource type="Texture2D" uid="uid://cbaspxuomceu0" path="res://Assets/Sprites/UI/Normal.png" id="6_lwepu"]
+[ext_resource type="Texture2D" uid="uid://bvysiscu7wkwk" path="res://Assets/Sprites/UI/Chased.png" id="7_eje0d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_45lau"]
+atlas = ExtResource("6_33uj5")
+region = Rect2(0, 0, 77, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y8ijk"]
+atlas = ExtResource("6_33uj5")
+region = Rect2(77, 0, 77, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n3t82"]
+atlas = ExtResource("6_33uj5")
+region = Rect2(154, 0, 77, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53eir"]
+atlas = ExtResource("6_33uj5")
+region = Rect2(231, 0, 77, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lpnw4"]
+atlas = ExtResource("7_eje0d")
+region = Rect2(0, 0, 77, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c72tt"]
+atlas = ExtResource("7_eje0d")
+region = Rect2(77, 0, 77, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1bryb"]
+atlas = ExtResource("7_eje0d")
+region = Rect2(154, 0, 77, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pewjq"]
+atlas = ExtResource("7_eje0d")
+region = Rect2(231, 0, 77, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4klf"]
+atlas = ExtResource("6_lwepu")
+region = Rect2(0, 0, 77, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5soug"]
+atlas = ExtResource("6_lwepu")
+region = Rect2(77, 0, 77, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k6w7e"]
+atlas = ExtResource("6_lwepu")
+region = Rect2(154, 0, 77, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0fmfy"]
+atlas = ExtResource("6_lwepu")
+region = Rect2(231, 0, 77, 53)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7mivu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45lau")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y8ijk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n3t82")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53eir")
+}],
+"loop": true,
+"name": &"Caution",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lpnw4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c72tt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1bryb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pewjq")
+}],
+"loop": true,
+"name": &"Chased",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4klf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5soug")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k6w7e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0fmfy")
+}],
+"loop": true,
+"name": &"Normal",
+"speed": 4.0
+}]
+
+[node name="Minigame" type="Node2D"]
+script = ExtResource("1_pgsc6")
+
+[node name="Ground" type="TileMapLayer" parent="."]
+
+[node name="Obstacles" type="TileMapLayer" parent="."]
+
+[node name="Player_Pixel" parent="." instance=ExtResource("1_ylxee")]
+position = Vector2(960, 540)
+scale = Vector2(3, 3)
+speed = 300.0
+
+[node name="Dog_Pixel" parent="." instance=ExtResource("3_d45r5")]
+z_index = 1
+position = Vector2(1795, 86)
+scale = Vector2(2, 2)
+speed = 150.0
+patrol_speed = 200.0
+chase_distance = 200.0
+return_to_patrol_distance = 250.0
+patrol_points = Array[Vector2]([Vector2(1800, 80), Vector2(120, 80), Vector2(1800, 980), Vector2(120, 980)])
+
+[node name="Coins" type="Node2D" parent="."]
+z_index = 1
+
+[node name="Coin" parent="Coins" instance=ExtResource("4_8fg8i")]
+position = Vector2(960, 674)
+scale = Vector2(3, 3)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 34.0
+offset_top = 47.0
+offset_right = 202.0
+offset_bottom = 128.0
+theme_override_fonts/font = ExtResource("5_chpxq")
+theme_override_font_sizes/font_size = 81
+text = "PIKEM"
+
+[node name="Pikem UI" type="AnimatedSprite2D" parent="."]
+position = Vector2(345, 83)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_7mivu")
+animation = &"Normal"
+autoplay = "Normal"
+frame = 1
+frame_progress = 0.906889

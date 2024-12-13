@@ -6,25 +6,29 @@
 				"line_number":1,
 				"name":"PIKEM",
 				"emotion":"res://Assets/Sprites/Pikem/Portrait Pikem Happy.png",
-				"line":"Ya compré todo, es hora de ir a casa."
+				"line":"Ya compré todo, es hora de ir a casa.",
+				"textbox":"res://Assets/Sprites/UI/Pikem Textbox.png"
 			},
 			{
 				"line_number":2,
 				"name":"PIKEM",
 				"emotion":"res://Assets/Sprites/Pikem/Portrait Pikem Normal.png",
-				"line":"No puedo pasar por aquí."
+				"line":"No puedo pasar por aquí.",
+				"textbox":"res://Assets/Sprites/UI/Pikem Textbox.png"
 			},
 			{
 				"line_number":3,
 				"name":"PIKEM",
 				"emotion":"res://Assets/Sprites/Pikem/Portrait Pikem Normal.png",
-				"line":"Es muy tarde. Mejor me apresuro al metro."
+				"line":"Es muy tarde. Mejor me apresuro al metro.",
+				"textbox":"res://Assets/Sprites/UI/Pikem Textbox.png"
 			},
 			{
 				"line_number":4,
 				"name":"PIKEM",
 				"emotion":"res://Assets/Sprites/Pikem/Portrait Pikem Crying.png",
-				"line":"Es peligroso de noche, debo volver rápido."
+				"line":"Es peligroso de noche, debo volver rápido.",
+				"textbox":"res://Assets/Sprites/UI/Pikem Textbox.png"
 			}
 		]
 	},
@@ -35,13 +39,15 @@
 				"line_number":1,
 				"name":"PIKEM",
 				"emotion":"res://Assets/Sprites/Pikem/Portrait Pikem Normal.png",
-				"line":"El metro llegará pronto. Tengo que esperarlo."
+				"line":"El metro llegará pronto. Tengo que esperarlo.",
+				"textbox":"res://Assets/Sprites/UI/Pikem Textbox.png"
 			},
 			{
 				"line_number":2,
 				"name":"PIKEM",
 				"emotion":"res://Assets/Sprites/Pikem/Portrait Pikem Happy.png",
-				"line":"Esa película se ve interesante. Cuando salga iré a verla."
+				"line":"Esa película se ve interesante. Cuando salga iré a verla.",
+				"textbox":"res://Assets/Sprites/UI/Pikem Textbox.png"
 			}
 		]
 		
@@ -53,7 +59,8 @@
 				"line_number":1,
 				"name":"PIKEM",
 				"emotion":"res://Assets/Sprites/Pikem/Portrait Pikem None.png",
-				"line":"zzz... (Se ha dormido)"
+				"line":"zzz... (Se ha dormido)",
+				"textbox":"res://Assets/Sprites/UI/Pikem Textbox.png"
 			}
 		]
 		
@@ -65,27 +72,120 @@
 				"line_number":1,
 				"name":"PIKEM",
 				"emotion":"normal",
-				"npc_name":"none",
 				"emotion":"res://Assets/Sprites/Pikem/Portrait Pikem Surprise.png",
-				"line":"¡NO PUEDE SER!. ¡ME QUEDÉ DORMIDO!"
+				"line":"¡NO PUEDE SER!. ¡ME QUEDÉ DORMIDO!",
+				"textbox":"res://Assets/Sprites/UI/Pikem Textbox.png"
 			},
 			{
 				"line_number":2,
 				"name":"PIKEM",
 				"emotion":"res://Assets/Sprites/Pikem/Portrait Pikem Crying.png",
-				"line":"¡¿DÓNDE ESTAN MIS COSAS?!. ¡NO LAS ENCUENTRO!"
+				"line":"¡¿DÓNDE ESTAN MIS COSAS?!. ¡NO LAS ENCUENTRO!",
+				"textbox":"res://Assets/Sprites/UI/Pikem Textbox.png"
 			},
 			{
 				"line_number":3,
 				"name":"PIKEM",
 				"emotion":"res://Assets/Sprites/Pikem/Portrait Pikem Crying.png",
-				"line":"Debo salir de aquí, debo volver a casa de alguna forma."
+				"line":"Debo salir de aquí, debo volver a casa de alguna forma.",
+				"textbox":"res://Assets/Sprites/UI/Pikem Textbox.png"
 			},
 			{
 				"line_number":4,
 				"name":"PIKEM",
 				"emotion":"res://Assets/Sprites/Pikem/Portrait Pikem Crying.png",
-				"line":"Es muy tarde, no puedo esperar a que el metro vuelva a funcionar."
+				"line":"Es muy tarde, no puedo esperar a que el metro vuelva a funcionar.",
+				"textbox":"res://Assets/Sprites/UI/Pikem Textbox.png"
+			},
+			{
+				"line_number":5,
+				"name":"PIKEM",
+				"emotion":"res://Assets/Sprites/Pikem/Portrait Pikem Crying.png",
+				"line":"Solo espero que no hayan perros agresivos en el callejón.",
+				"textbox":"res://Assets/Sprites/UI/Pikem Textbox.png"
+			}
+		]
+		
+	},
+	{
+		"act_number":5,
+		"lines":[
+			{
+				"line_number":1,
+				"name":"PIKEM",
+				"emotion":"res://Assets/Sprites/Pikem/Portrait Pikem Surprise.png",
+				"line":"Oh...",
+				"textbox":"res://Assets/Sprites/UI/Pikem Textbox.png"
+			},
+			{
+				"line_number":2,
+				"name":"MOUSE",
+				"emotion":"res://Assets/Sprites/Mouse/Portrait Mouse Grumpy.png",
+				"line":"Recién había terminado de pagar este departamento.",
+				"textbox":"res://Assets/Sprites/UI/Mouse Textbox.png"
+			},
+			{
+				"line_number":3,
+				"name":"PIKEM",
+				"emotion":"res://Assets/Sprites/Pikem/Portrait Pikem Crying.png",
+				"line":"Perdón, no sabía que era tu casa. Solo estaba buscando como pasar y obstruía el camino.",
+				"textbox":"res://Assets/Sprites/UI/Pikem Textbox.png"
+			},
+			{
+				"line_number":4,
+				"name":"MOUSE",
+				"emotion":"res://Assets/Sprites/Mouse/Portrait Mouse Crying.png",
+				"line":"Si quieres pasar, buena suerte. Solo que más adelante hay unos perros malvados, rabiosos, con sed de sangre y tienen ¡¡¡SARNAAA!!!",
+				"textbox":"res://Assets/Sprites/UI/Mouse Textbox.png"
+			},
+			{
+				"line_number":5,
+				"name":"PIKEM",
+				"emotion":"res://Assets/Sprites/Pikem/Portrait Pikem Crying.png",
+				"line":"... Gracias. Me voy llendo.",
+				"textbox":"res://Assets/Sprites/UI/Pikem Textbox.png"
+			},
+			{
+				"line_number":6,
+				"name":"MOUSE",
+				"emotion":"res://Assets/Sprites/Mouse/Portrait Mouse Angry.png",
+				"line":"Oye... ¡¿Y TE VAS A IR DESPUÉS DE ROMPER MI CASA Y TODO LO QUE TENÍA?! ¡¡¡PAGAMEEEEEEEE!!!",
+				"textbox":"res://Assets/Sprites/UI/Mouse Textbox.png"
+			},
+			{
+				"line_number":7,
+				"name":"PIKEM",
+				"emotion":"res://Assets/Sprites/Pikem/Portrait Pikem Crying.png",
+				"line":"Pero me acaban de robar hasta las zanahorias...",
+				"textbox":"res://Assets/Sprites/UI/Pikem Textbox.png"
+			},
+			{
+				"line_number":8,
+				"name":"MOUSE",
+				"emotion":"res://Assets/Sprites/Mouse/Portrait Mouse Grumpy.png",
+				"line":"Comprendo...",
+				"textbox":"res://Assets/Sprites/UI/Mouse Textbox.png"
+			},
+			{
+				"line_number":9,
+				"name":"MOUSE",
+				"emotion":"res://Assets/Sprites/Mouse/Portrait Mouse Happy.png",
+				"line":"Entonces ayudame a buscar otra casa ¿si?. ¡¡¡Gracias!!!.",
+				"textbox":"res://Assets/Sprites/UI/Mouse Textbox.png"
+			},
+			{
+				"line_number":10,
+				"name":"PIKEM",
+				"emotion":"res://Assets/Sprites/Pikem/Portrait Pikem Angry.png",
+				"line":"¡¡¡OYEEEE!!!",
+				"textbox":"res://Assets/Sprites/UI/Pikem Textbox.png"
+			},
+			{
+				"line_number":11,
+				"name":"MOUSE",
+				"emotion":"res://Assets/Sprites/Mouse/Portrait Mouse Normal.png",
+				"line":"No seas llorón. Te enseñaré a salir de aquí.",
+				"textbox":"res://Assets/Sprites/UI/Mouse Textbox.png"
 			}
 		]
 		

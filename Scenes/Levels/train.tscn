@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b040bsqj8qk1j" path="res://Assets/Sprites/Backgrounds/ESCENA 3/metro interior.png" id="2_x0caa"]
 [ext_resource type="PackedScene" uid="uid://dwq5crr067qbo" path="res://Scenes/Characters/interaction_point.tscn" id="4_hbvyu"]
 [ext_resource type="Texture2D" uid="uid://kadcdwe1fd0g" path="res://Assets/Sprites/UI/interaccion.png" id="5_c2ctc"]
-[ext_resource type="PackedScene" uid="uid://w7prj0lycfqv" path="res://Scenes/Obstacle.tscn" id="6_halip"]
+[ext_resource type="PackedScene" uid="uid://w7prj0lycfqv" path="res://Scenes/obstacle.tscn" id="6_halip"]
 
 [node name="Train" type="Node2D" node_paths=PackedStringArray("player_pos")]
 script = ExtResource("1_4n524")

@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dwq5crr067qbo" path="res://Scenes/Characters/interaction_point.tscn" id="4_gq23s"]
 [ext_resource type="Texture2D" uid="uid://ch5ni1ju78u68" path="res://Assets/Sprites/Backgrounds/ESCENA 2/vagon extremo 2.png" id="5_mauei"]
 [ext_resource type="Texture2D" uid="uid://kadcdwe1fd0g" path="res://Assets/Sprites/UI/interaccion.png" id="5_u3hxw"]
-[ext_resource type="PackedScene" uid="uid://w7prj0lycfqv" path="res://Scenes/Obstacle.tscn" id="6_nmgls"]
+[ext_resource type="PackedScene" uid="uid://w7prj0lycfqv" path="res://Scenes/obstacle.tscn" id="6_nmgls"]
 
 [node name="Underground" type="Node2D" node_paths=PackedStringArray("player_pos")]
 script = ExtResource("1_p1wkp")

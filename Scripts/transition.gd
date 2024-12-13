@@ -7,6 +7,9 @@ var in_transition: bool
 @onready var memu_scene: PackedScene = load("res://Scenes/Menu/menu.tscn")
 @onready var underground_scene2: PackedScene = load("res://Scenes/Levels/underground2.tscn")
 @onready var overworld_scene2: PackedScene = load("res://Scenes/Levels/overworld2.tscn")
+@onready var alley_scene: PackedScene = load("res://Scenes/Levels/alley.tscn")
+@onready var codec_scene: PackedScene = load("res://Scenes/Levels/codec.tscn")
+@onready var minigame_scene: PackedScene = load("res://Scenes/Levels/minigame.tscn")
 
 @onready var crossfade = $Crossfade
 @onready var animation_player = $AnimationPlayer

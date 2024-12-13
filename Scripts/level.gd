@@ -5,7 +5,7 @@ var player: PackedScene = load("res://Scenes/Characters/player.tscn")
 @export var level_bounds: Rect2
 
 func _ready():
-	DataManager.train = false
+	DialogueManager.dialogue_screen.hide()
 	DataManager.event_name = ""
 	AudioManager.play_music(bg_music)
 	var player_instance = player.instantiate()
