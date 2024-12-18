@@ -18,7 +18,7 @@ func _ready():
 	arrow.hide()
 
 func _input(event):
-	if event.is_action_pressed("ui_accept") and !in_dialogue and dialogue_screen.visible:
+	if event.is_action_pressed("action") and !in_dialogue and dialogue_screen.visible:
 		_close_dialogue()
 	
 func _play_dialogue_box():
@@ -31,7 +31,7 @@ func _play_dialogue_box():
 		pikem.show()
 		npc.hide()
 		if DataManager.event_name != "Sleep":
-			AudioManager.play_sound("Meow.mp3")
+			AudioManager.play_sound("Meow.mp3", AudioManager.sfx_stream)
 			TweenManager._jump_tween(pikem)
 	if DataManager.current_name == "MOUSE":
 		name_label.hide()
@@ -39,7 +39,7 @@ func _play_dialogue_box():
 		pikem.hide()
 		npc.show()
 		TweenManager._jump_tween(npc)
-		AudioManager.play_sound("Squeak.ogg")
+		AudioManager.play_sound("Squeak.ogg", AudioManager.sfx_stream)
 	dialogue_animation.play("write_text")
 	await dialogue_animation.animation_finished
 	arrow.show()
@@ -59,7 +59,7 @@ func _load_dialogue_box(_line: String, _name: String, _avatar_texture: Texture2D
 	
 func _close_dialogue():
 	if DataManager.event_name == "Sleep":
-		TransitionManager.load_scene(TransitionManager.underground_scene2, "Transition")
+		TransitionManager.load_scene("res://Scenes/Levels/underground2.tscn", "Transition")
 	elif DataManager.event_name == "Box":
 		if line_cont < 11:
 			line_cont += 1
@@ -69,10 +69,9 @@ func _close_dialogue():
 			line_cont = 0
 			arrow.hide()
 			dialogue_screen.hide()
-			TransitionManager.load_scene(TransitionManager.codec_scene, "Transition")
+			TransitionManager.load_scene("res://Scenes/Levels/codec.tscn", "Transition")
 			DataManager.player_control = true
-			
-	else:
+	elif DataManager.event_name == "": 
 		arrow.hide()
 		dialogue_screen.hide()
 		DataManager.player_control = true

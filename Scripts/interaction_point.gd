@@ -20,39 +20,39 @@ func _ready():
 	interaction_icon.set_texture(interaction_texture)	
 	
 func _input(event):
-	if in_interaction and event.is_action_pressed("ui_accept"):
-		if DialogueManager.in_dialogue:
-			DialogueManager._close_dialogue()
-		elif interaction_type == "Dialogue":
+	if in_interaction and event.is_action_pressed("action") and !DialogueManager.dialogue_screen.visible:
+		if interaction_type == "Dialogue":
 			DataManager._get_dialogue(dialogue_act, dialogue_line)
 			DialogueManager._load_dialogue_box(DataManager.current_line, DataManager.current_name, DataManager.current_texture, DataManager.current_textbox)
 			DialogueManager._play_dialogue_box()
 		elif interaction_type == "Scene":
 			if interaction_label.text == "ENTRADA":
-				TransitionManager.load_scene(TransitionManager.underground_scene, "Transition")
+				TransitionManager.load_scene("res://Scenes/Levels/underground.tscn", "Transition")
 			elif interaction_label.text == "SALIDA":
-				TransitionManager.load_scene(TransitionManager.overworld_scene2, "Transition")
+				TransitionManager.load_scene("res://Scenes/Levels/overworld2.tscn", "Transition")
 			elif interaction_label.text == "CALLEJON":
-				TransitionManager.load_scene(TransitionManager.alley_scene, "Transition")
+				TransitionManager.load_scene("res://Scenes/Levels/mousealley.tscn", "Transition")
 		elif interaction_type == "Event":
 			DataManager.player_control = false
 			interaction_icon.hide()
 			DataManager.event_name = event_name
-			if DataManager.event_name == "Train":
+			if DataManager.event_name == "Train" and !DataManager.in_train:
+				DataManager.in_train = true
 				var train = get_tree().get_first_node_in_group("Train")
 				var player = get_tree().get_first_node_in_group("Player")
 				TweenManager._move_tween(train, -1450, 0, 5)
-				AudioManager.play_sound("Stop Train.mp3")
+				AudioManager.play_sound("Stop Train.mp3", AudioManager.sfx_stream)
 				await get_tree().create_timer(5).timeout
-				AudioManager.play_sound("Open Train.wav")
+				AudioManager.play_sound("Open Train.wav", AudioManager.sfx_stream)
 				await get_tree().create_timer(2).timeout
-				AudioManager.play_sound("Close Train.wav")
+				AudioManager.play_sound("Close Train.wav", AudioManager.sfx_stream)
 				await get_tree().create_timer(2).timeout
-				player.queue_free()
-				AudioManager.play_sound("Start Train.wav")
+				if player != null:
+					player.hide()
+				AudioManager.play_sound("Start Train.wav", AudioManager.sfx_stream)
 				TweenManager._move_tween(train, -5450, 0, 6)
 				await get_tree().create_timer(6).timeout
-				TransitionManager.load_scene(TransitionManager.train_scene, "Transition")
+				TransitionManager.load_scene("res://Scenes/Levels/train.tscn", "Transition")
 				DataManager.event_num += 1
 			elif DataManager.event_name == "Box" and !DataManager.mouse_dialogue:
 				collision.queue_free()
@@ -62,10 +62,7 @@ func _input(event):
 				anim.play("boxout")
 				await anim.animation_finished
 				DialogueManager._mouse_conversation()
-				
-				
-				
-				
+						
 func _on_body_entered(body):
 	if body.is_in_group(player_group):
 		if interaction_type == "Dialogue" or interaction_type == "Event":

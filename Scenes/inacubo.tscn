@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c26np7f7kc1o1"]
+
+[ext_resource type="Texture2D" uid="uid://dwtaxk2o72d8v" path="res://Assets/Sprites/Minigame/Cuboinaca.png" id="1_hdacm"]
+[ext_resource type="Script" path="res://Scripts/inacubo.gd" id="1_o30f6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eu0cv"]
+size = Vector2(116.8, 80.8)
+
+[node name="Inacubo" type="Area2D" groups=["Coin"]]
+scale = Vector2(2.5, 2.5)
+script = ExtResource("1_o30f6")
+
+[node name="AnimatedSprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_hdacm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.2, 1.2)
+shape = SubResource("RectangleShape2D_eu0cv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

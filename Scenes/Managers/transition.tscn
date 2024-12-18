@@ -1,6 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cdogcgfdra3hd"]
+[gd_scene load_steps=8 format=3 uid="uid://cdogcgfdra3hd"]
 
 [ext_resource type="Script" path="res://Scripts/transition.gd" id="1_somby"]
+[ext_resource type="FontFile" uid="uid://cvaih4g641j8u" path="res://Assets/Fonts/UI.ttf" id="2_m1k5l"]
+[ext_resource type="Texture2D" uid="uid://ysv6nu4lc42a" path="res://Assets/Sprites/Pikem/Wait.png" id="3_7dd30"]
 
 [sub_resource type="Animation" id="Animation_4opx7"]
 resource_name = "Crossfade"
@@ -11,10 +13,10 @@ tracks/0/path = NodePath("Crossfade:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.0333333, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [true, true]
+"values": [false, true, true]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -26,7 +28,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_bhjgu"]
@@ -133,9 +135,45 @@ visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -1920.0
+offset_right = -1920.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="Title" type="Label" parent="Transition"]
+layout_mode = 0
+offset_left = 265.0
+offset_top = 177.0
+offset_right = 1049.0
+offset_bottom = 555.0
+theme_override_colors/font_color = Color(0.945098, 0.572549, 0.054902, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 20
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("2_m1k5l")
+theme_override_font_sizes/font_size = 378
+text = "PIKEM"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Subtitle" type="Label" parent="Transition"]
+layout_mode = 0
+offset_left = 272.0
+offset_top = 440.0
+offset_right = 1007.0
+offset_bottom = 629.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_fonts/font = ExtResource("2_m1k5l")
+theme_override_font_sizes/font_size = 189
+text = "BACK HOME"
+
+[node name="AnimatedSprite2D" type="Sprite2D" parent="Transition"]
+position = Vector2(1459, 609)
+texture = ExtResource("3_7dd30")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

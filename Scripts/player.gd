@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 500
+const SPEED = 600
 @onready var anim = $AnimationPlayer
 @onready var camera: Camera2D = $Camera2D
 @onready var collision: CollisionShape2D = $CollisionShape2D
@@ -31,16 +31,26 @@ func _ready():
 
 func _physics_process(_delta):
 	if DataManager.player_control:
-		var direction := Input.get_axis("ui_left", "ui_right")
+		var direction := Input.get_axis("left", "right")
 		if direction:
 			pikem.flip_h = true if direction > 0 else false
 			bag.flip_h = true if direction > 0 else false
 			velocity.x = direction * SPEED
-			anim.play("move")
+			if get_tree().current_scene.name == "Underground2":
+				anim.play("move fear")
+			elif get_tree().current_scene.name == "Overworld2" or get_tree().current_scene.name == "Mousealley": 
+				anim.play("move fearest")	
+			else:
+				anim.play("move")
 			
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
-			anim.play("idle")
+			if get_tree().current_scene.name == "Underground2":
+				anim.play("idle fear")
+			elif get_tree().current_scene.name == "Overworld2": 
+				anim.play("idle fearest")	
+			else:
+				anim.play("idle")
 
 		move_and_slide()
 		
@@ -55,12 +65,16 @@ func _physics_process(_delta):
 		await get_tree().create_timer(0.4).timeout
 		TweenManager._move_tween(bag, bag.position.x, 100, 0.1)
 		await anim.animation_finished
-		#await get_tree().create_timer(10).timeout
 		DataManager._get_dialogue(3, 1)
 		DialogueManager._load_dialogue_box(DataManager.current_line, DataManager.current_name, DataManager.current_texture, DataManager.current_textbox)
 		DialogueManager._play_dialogue_box()
 		DataManager.stolen = true
 	
 	if DialogueManager.dialogue_screen.visible or !DataManager.player_control:
-		anim.play("idle")
+		if get_tree().current_scene.name == "Underground2":
+			anim.play("idle fear")
+		elif get_tree().current_scene.name == "Overworld2" or get_tree().current_scene.name == "Alley": 
+			anim.play("idle fearest")	
+		else:
+			anim.play("wait")
 		

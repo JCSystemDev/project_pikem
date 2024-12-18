@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://dygpg1oyagqvd"]
+[gd_scene load_steps=59 format=3 uid="uid://dygpg1oyagqvd"]
 
 [ext_resource type="Script" path="res://Scripts/player_pixel.gd" id="1_1knfl"]
 [ext_resource type="Texture2D" uid="uid://batsoaws5kjae" path="res://Assets/Sprites/Pikem/Pikem_Sprite_Sheet.png" id="2_3no1r"]
@@ -232,7 +232,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Attack Down",
-"speed": 8.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -249,7 +249,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Attack Left",
-"speed": 8.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -266,7 +266,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Attack Right",
-"speed": 8.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -283,7 +283,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Attack Up",
-"speed": 8.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -312,6 +312,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gkgf7")
+}, {
+"duration": 1.0,
+"texture": null
 }],
 "loop": false,
 "name": &"Death",
@@ -443,21 +446,38 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iv0ec"]
-size = Vector2(28, 30)
+size = Vector2(32, 17)
 
-[node name="Pikem" type="CharacterBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_uwfeb"]
+
+[node name="Player" type="CharacterBody2D" groups=["Enemy", "Player"]]
+z_index = 1
+scale = Vector2(1.5, 1.5)
+collision_mask = 26
 script = ExtResource("1_1knfl")
 speed = 400.0
 
 [node name="PIKEM" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 2)
 sprite_frames = SubResource("SpriteFrames_0qs0o")
-animation = &"Move Up"
+animation = &"Death"
 autoplay = "Idle Down"
-frame_progress = 0.735424
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 7)
+position = Vector2(0, 13.5)
 shape = SubResource("RectangleShape2D_iv0ec")
 
-[node name="SFX" type="AudioStreamPlayer" parent="."]
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_left = 0
+limit_top = -2800
+limit_right = 1920
+limit_bottom = 1080
+
+[node name="Attack Area" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack Area" groups=["Player"]]
+position = Vector2(0, 6.66667)
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_uwfeb")

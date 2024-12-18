@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djhwlhhpkswvm"
-path="res://.godot/imported/Pikem Fear.png-127a28633e631042c3e476359af612b4.ctex"
+uid="uid://du7gy45blmkn0"
+path="res://.godot/imported/Dream 1.png-6354d1144c7923d5b561487d292aa171.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Pikem/Pikem Fear.png"
-dest_files=["res://.godot/imported/Pikem Fear.png-127a28633e631042c3e476359af612b4.ctex"]
+source_file="res://Assets/Sprites/Pikem/Dreams/Dream 1.png"
+dest_files=["res://.godot/imported/Dream 1.png-6354d1144c7923d5b561487d292aa171.ctex"]
 
 [params]
 

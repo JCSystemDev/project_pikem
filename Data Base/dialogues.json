@@ -59,7 +59,7 @@
 				"line_number":1,
 				"name":"PIKEM",
 				"emotion":"res://Assets/Sprites/Pikem/Portrait Pikem None.png",
-				"line":"zzz... (Se ha dormido)",
+				"line":"ZZZ... (Se ha dormido).",
 				"textbox":"res://Assets/Sprites/UI/Pikem Textbox.png"
 			}
 		]
@@ -73,14 +73,14 @@
 				"name":"PIKEM",
 				"emotion":"normal",
 				"emotion":"res://Assets/Sprites/Pikem/Portrait Pikem Surprise.png",
-				"line":"¡NO PUEDE SER!. ¡ME QUEDÉ DORMIDO!",
+				"line":"¡NO PUEDE SER!. ¡ME QUEDÉ DORMIDO!.",
 				"textbox":"res://Assets/Sprites/UI/Pikem Textbox.png"
 			},
 			{
 				"line_number":2,
 				"name":"PIKEM",
 				"emotion":"res://Assets/Sprites/Pikem/Portrait Pikem Crying.png",
-				"line":"¡¿DÓNDE ESTAN MIS COSAS?!. ¡NO LAS ENCUENTRO!",
+				"line":"¡¿DÓNDE ESTAN MIS COSAS?!. ¡NO LAS ENCUENTRO!.",
 				"textbox":"res://Assets/Sprites/UI/Pikem Textbox.png"
 			},
 			{
@@ -135,7 +135,7 @@
 				"line_number":4,
 				"name":"MOUSE",
 				"emotion":"res://Assets/Sprites/Mouse/Portrait Mouse Crying.png",
-				"line":"Si quieres pasar, buena suerte. Solo que más adelante hay unos perros malvados, rabiosos, con sed de sangre y tienen ¡¡¡SARNAAA!!!",
+				"line":"Si quieres pasar, buena suerte. Solo que más adelante hay unos perros malvados, rabiosos, con sed de sangre y tienen ¡¡¡SARNAAA!!!.",
 				"textbox":"res://Assets/Sprites/UI/Mouse Textbox.png"
 			},
 			{
@@ -149,7 +149,7 @@
 				"line_number":6,
 				"name":"MOUSE",
 				"emotion":"res://Assets/Sprites/Mouse/Portrait Mouse Angry.png",
-				"line":"Oye... ¡¿Y TE VAS A IR DESPUÉS DE ROMPER MI CASA Y TODO LO QUE TENÍA?! ¡¡¡PAGAMEEEEEEEE!!!",
+				"line":"Oye... ¡¿Y TE VAS A IR DESPUÉS DE ROMPER MI CASA Y TODO LO QUE TENÍA?! ¡¡¡PAGAMEEEEEEEE!!!.",
 				"textbox":"res://Assets/Sprites/UI/Mouse Textbox.png"
 			},
 			{
@@ -177,7 +177,7 @@
 				"line_number":10,
 				"name":"PIKEM",
 				"emotion":"res://Assets/Sprites/Pikem/Portrait Pikem Angry.png",
-				"line":"¡¡¡OYEEEE!!!",
+				"line":"¡¡¡OYEEEE!!!.",
 				"textbox":"res://Assets/Sprites/UI/Pikem Textbox.png"
 			},
 			{
@@ -187,6 +187,215 @@
 				"line":"No seas llorón. Te enseñaré a salir de aquí.",
 				"textbox":"res://Assets/Sprites/UI/Mouse Textbox.png"
 			}
+		]
+		
+	},
+	{
+		"act_number":6,
+		"lines":[
+			{
+				"line_number":1,
+				"name":"MOUSE",
+				"line":"Snake, no olvides que esta es una operación encubierta. Hay Muchos perros malos y solo un gato. Si te pillan...",
+				"textbox":"res://Assets/Sprites/UI/Mouse Textbox.png",
+				"emotion":"res://Assets/Sprites/Mouse/Portrait Mouse Normal.png"
+			},
+			{
+				"line_number":2,
+				"name":"PIKEM",
+				"line":"No me llamo Snake...",
+				"textbox":"res://Assets/Sprites/UI/Pikem Textbox.png",
+				"emotion":"res://Assets/Sprites/Pikem/Portrait Pikem Normal.png"
+			},
+			{
+				"line_number":3,
+				"name":"MOUSE",
+				"line":"Como sea que te llames, pero que no te vean los perros, y si te ven, ¡¡¡CORREEEEE!!!.",
+				"textbox":"res://Assets/Sprites/UI/Mouse Textbox.png",
+				"emotion":"res://Assets/Sprites/Mouse/Portrait Mouse Normal.png"
+			},
+			{
+				"line_number":4,
+				"name":"MOUSE",
+				"line":"Dudo que puedas correr más rápido que los sabuesos, así que haz tu mejor esfuerzo para pasar desapercibido.",
+				"textbox":"res://Assets/Sprites/UI/Mouse Textbox.png",
+				"emotion":"res://Assets/Sprites/Mouse/Portrait Mouse Normal.png"
+			},
+			{
+				"line_number":5,
+				"name":"PIKEM",
+				"line":"Esas monedas se parecen a las que me robaron.",
+				"textbox":"res://Assets/Sprites/UI/Pikem Textbox.png",
+				"emotion":"res://Assets/Sprites/Pikem/Portrait Pikem Normal.png"
+			},
+			{
+				"line_number":6,
+				"name":"MOUSE",
+				"line":"Bien, así me puedes pagar la maldita casa.",
+				"textbox":"res://Assets/Sprites/UI/Mouse Textbox.png",
+				"emotion":"res://Assets/Sprites/Mouse/Portrait Mouse Normal.png"
+			},
+			{
+				"line_number":7,
+				"name":"MOUSE",
+				"line":"De todos modos, Recógelas antes de avanzar o tal vez se pierdan en tanta basura.",
+				"textbox":"res://Assets/Sprites/UI/Mouse Textbox.png",
+				"emotion":"res://Assets/Sprites/Mouse/Portrait Mouse Normal.png"
+			},
+			{
+				"line_number":8,
+				"name":"MOUSE",
+				"line":"Suerte.",
+				"textbox":"res://Assets/Sprites/UI/Mouse Textbox.png",
+				"emotion":"res://Assets/Sprites/Mouse/Portrait Mouse Normal.png"
+			}
+		]
+		
+	},
+	{
+		"act_number":7,
+		"lines":[
+			{
+				"line_number":1,
+				"name":"PIKEM",
+				"line":"Oye...",
+				"textbox":"res://Assets/Sprites/UI/Pikem Textbox.png",
+				"emotion":"res://Assets/Sprites/Pikem/Portrait Pikem Normal.png"
+			},
+			{
+				"line_number":2,
+				"name":"PIKEM",
+				"line":"¿Es normal que no pueda pasar?, no hay una pared ni nada.",
+				"textbox":"res://Assets/Sprites/UI/Pikem Textbox.png",
+				"emotion":"res://Assets/Sprites/Pikem/Portrait Pikem Normal.png"
+			},
+			{
+				"line_number":3,
+				"name":"MOUSE",
+				"line":"No hay más juego.",
+				"textbox":"res://Assets/Sprites/UI/Mouse Textbox.png",
+				"emotion":"res://Assets/Sprites/Mouse/Portrait Mouse Normal.png"
+			},
+			{
+				"line_number":4,
+				"name":"PIKEM",
+				"line":"...¿Qué?.",
+				"textbox":"res://Assets/Sprites/UI/Pikem Textbox.png",
+				"emotion":"res://Assets/Sprites/Pikem/Portrait Pikem Normal.png"
+			},
+			{
+				"line_number":5,
+				"name":"MOUSE",
+				"line":"No hay más juego. Nos quedamos sin tiempo y solo pudimos desarrollarlo hasta acá.",
+				"textbox":"res://Assets/Sprites/UI/Mouse Textbox.png",
+				"emotion":"res://Assets/Sprites/Mouse/Portrait Mouse Normal.png"
+			},
+			{
+				"line_number":6,
+				"name":"PIKEM",
+				"line":"¿Y ahora qué?.",
+				"textbox":"res://Assets/Sprites/UI/Pikem Textbox.png",
+				"emotion":"res://Assets/Sprites/Pikem/Portrait Pikem Normal.png"
+			},
+			{
+				"line_number":7,
+				"name":"MOUSE",
+				"line":"De primera, Nosé cuando volveré a sentir la comodidad de mi sillón Deluxe otra vez...",
+				"textbox":"res://Assets/Sprites/UI/Mouse Textbox.png",
+				"emotion":"res://Assets/Sprites/Mouse/Portrait Mouse Normal.png"
+			},
+			{
+				"line_number":8,
+				"name":"MOUSE",
+				"line":"Y además de eso, vamos a tener que esperar a que hagan más juego.",
+				"textbox":"res://Assets/Sprites/UI/Mouse Textbox.png",
+				"emotion":"res://Assets/Sprites/Mouse/Portrait Mouse Normal.png"
+			},
+			{
+				"line_number":9,
+				"name":"MOUSE",
+				"line":"Y los responsables de este mundo son universitarios...",
+				"textbox":"res://Assets/Sprites/UI/Mouse Textbox.png",
+				"emotion":"res://Assets/Sprites/Mouse/Portrait Mouse Normal.png"
+			},
+			{
+				"line_number":10,
+				"name":"MOUSE",
+				"line":"Así que tenemos un buen rato.",
+				"textbox":"res://Assets/Sprites/UI/Mouse Textbox.png",
+				"emotion":"res://Assets/Sprites/Mouse/Portrait Mouse Normal.png"
+			},
+			{
+				"line_number":11,
+				"name":"PIKEM",
+				"line":"WAOW.",
+				"textbox":"res://Assets/Sprites/UI/Pikem Textbox.png",
+				"emotion":"res://Assets/Sprites/Pikem/Portrait Pikem Normal.png"
+			},
+			{
+				"line_number":12,
+				"name":"MOUSE",
+				"line":"¿Qué lindo, no?.",
+				"textbox":"res://Assets/Sprites/UI/Mouse Textbox.png",
+				"emotion":"res://Assets/Sprites/Mouse/Portrait Mouse Normal.png"
+			},
+			{
+				"line_number":13,
+				"name":"MOUSE",
+				"line":"Por mientras, Puedes intentar encontrar el SUPERMEGACUBO INACAP escondido en algún lado.",
+				"textbox":"res://Assets/Sprites/UI/Mouse Textbox.png",
+				"emotion":"res://Assets/Sprites/Mouse/Portrait Mouse Normal.png"
+			},
+			{
+				"line_number":14,
+				"name":"MOUSE",
+				"line":"Y si lo encuentras...",
+				"textbox":"res://Assets/Sprites/UI/Mouse Textbox.png",
+				"emotion":"res://Assets/Sprites/Mouse/Portrait Mouse Normal.png"
+			},
+			{
+				"line_number":15,
+				"name":"MOUSE",
+				"line":"Nose que ganas, pero tal vez es bakán. Tampoco tienes mucho más que hacer.",
+				"textbox":"res://Assets/Sprites/UI/Mouse Textbox.png",
+				"emotion":"res://Assets/Sprites/Mouse/Portrait Mouse Normal.png"
+			},
+			{
+				"line_number":16,
+				"name":"PIKEM",
+				"line":"...",
+				"textbox":"res://Assets/Sprites/UI/Pikem Textbox.png",
+				"emotion":"res://Assets/Sprites/Pikem/Portrait Pikem Normal.png"
+			},
+			{
+				"line_number":17,
+				"name":"PIKEM",
+				"line":"¿El cubo que está acá?.",
+				"textbox":"res://Assets/Sprites/UI/Pikem Textbox.png",
+				"emotion":"res://Assets/Sprites/Pikem/Portrait Pikem Normal.png"
+			},
+			{
+				"line_number":18,
+				"name":"MOUSE",
+				"line":"Ah. Ya lo encontraste.",
+				"textbox":"res://Assets/Sprites/UI/Mouse Textbox.png",
+				"emotion":"res://Assets/Sprites/Mouse/Portrait Mouse Normal.png"
+			},
+			{
+				"line_number":19,
+				"name":"MOUSE",
+				"line":"...",
+				"textbox":"res://Assets/Sprites/UI/Mouse Textbox.png",
+				"emotion":"res://Assets/Sprites/Mouse/Portrait Mouse Normal.png"
+			},
+			{
+				"line_number":20,
+				"name":"MOUSE",
+				"line":"¡Nos vemos en Marzo!.",
+				"textbox":"res://Assets/Sprites/UI/Mouse Textbox.png",
+				"emotion":"res://Assets/Sprites/Mouse/Portrait Mouse Normal.png"
+			}
+			
 		]
 		
 	}

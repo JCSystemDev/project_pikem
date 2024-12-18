@@ -34,7 +34,7 @@ position = Vector2(1223, 740)
 gizmo_extents = 25.0
 
 [node name="InteractionPoint1" parent="." instance=ExtResource("4_7hntl")]
-position = Vector2(2499, 884)
+position = Vector2(2033, 884)
 scale = Vector2(3.3, 3.3)
 dialogue_act = 4
 dialogue_line = 5

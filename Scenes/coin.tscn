@@ -70,6 +70,7 @@ animations = [{
 }]
 
 [node name="Coin" type="Area2D" groups=["Coin"]]
+scale = Vector2(2.5, 2.5)
 script = ExtResource("1_4cr6m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -78,6 +79,7 @@ shape = SubResource("CircleShape2D_ip3l6")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_y82j1")
 animation = &"Idle"
+autoplay = "Idle"
 frame_progress = 0.792933
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

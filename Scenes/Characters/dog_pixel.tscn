@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dqicilqdwtd0q"]
+[gd_scene load_steps=21 format=3 uid="uid://dqicilqdwtd0q"]
 
 [ext_resource type="Script" path="res://Scripts/dog_pixel.gd" id="1_7ukx1"]
 [ext_resource type="Texture2D" uid="uid://xvjv6vag5pcy" path="res://Assets/Sprites/Dog Pixel/Dog Chase.png" id="2_3lpo1"]
@@ -107,34 +107,47 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_iv0ec"]
-size = Vector2(88, 67)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ke4ru"]
+size = Vector2(13.125, 12)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_bhaoi"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k34sn"]
+size = Vector2(59.5, 55.5)
 
-[node name="Dog_Pixel" type="CharacterBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_kk1ax"]
+
+[node name="Dog_Pixel" type="CharacterBody2D" groups=["Enemy"]]
+scale = Vector2(2, 2)
+collision_layer = 16
 script = ExtResource("1_7ukx1")
-speed = 200.0
-patrol_speed = 250.0
-return_to_patrol_distance = 500.0
-patrol_points = Array[Vector2]([Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0)])
+speed = 300.0
 
 [node name="Dog" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_jbg3t")
 animation = &"Chase"
 autoplay = "Idle"
-frame_progress = 0.400656
+frame = 2
+frame_progress = 0.591636
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(1, 2.5)
-shape = SubResource("RectangleShape2D_iv0ec")
-
-[node name="Detection Area" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection Area"]
-scale = Vector2(10, 10)
-shape = SubResource("CircleShape2D_bhaoi")
-debug_color = Color(1, 0, 0, 0.419608)
+position = Vector2(-0.75, -2)
+scale = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_ke4ru")
+debug_color = Color(0, 0.609641, 0.63408, 0.419608)
 
 [node name="SFX" type="AudioStreamPlayer" parent="."]
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(-0.75, -1.25)
+shape = SubResource("RectangleShape2D_k34sn")
+debug_color = Color(0.999891, 0, 0.0973535, 0.42)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(8, 8)
+shape = SubResource("CircleShape2D_kk1ax")
+debug_color = Color(0, 0.648559, 0.17673, 0.42)
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

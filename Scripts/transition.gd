@@ -1,16 +1,6 @@
 extends CanvasLayer
 
 var in_transition: bool
-@onready var overworld_scene: PackedScene = load("res://Scenes/Levels/overworld.tscn")
-@onready var underground_scene: PackedScene = load("res://Scenes/Levels/underground.tscn")
-@onready var train_scene: PackedScene = load("res://Scenes/Levels/train.tscn")
-@onready var memu_scene: PackedScene = load("res://Scenes/Menu/menu.tscn")
-@onready var underground_scene2: PackedScene = load("res://Scenes/Levels/underground2.tscn")
-@onready var overworld_scene2: PackedScene = load("res://Scenes/Levels/overworld2.tscn")
-@onready var alley_scene: PackedScene = load("res://Scenes/Levels/alley.tscn")
-@onready var codec_scene: PackedScene = load("res://Scenes/Levels/codec.tscn")
-@onready var minigame_scene: PackedScene = load("res://Scenes/Levels/minigame.tscn")
-
 @onready var crossfade = $Crossfade
 @onready var animation_player = $AnimationPlayer
 @onready var transition_canvas = $"."
@@ -20,11 +10,11 @@ func _ready():
 	crossfade.visible = false
 	in_transition = false
 
-func load_scene(target_scene: PackedScene, transition: String):
+func load_scene(target_scene: String, transition: String):
 	transition_canvas.show()
 	animation_player.play(transition)
 	await animation_player.animation_finished
-	get_tree().change_scene_to_packed(target_scene)
+	get_tree().change_scene_to_file(target_scene)
 	animation_player.play_backwards(transition)
 	await animation_player.animation_finished
 	crossfade.visible = false

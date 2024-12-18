@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cx1niqwd88kp4"]
+[gd_scene load_steps=44 format=3 uid="uid://cx1niqwd88kp4"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_3cp2j"]
 [ext_resource type="Texture2D" uid="uid://b5xibmf8dlj0b" path="res://Assets/Sprites/Pikem/Pikem Idle.png" id="2_u76mu"]
@@ -15,10 +15,28 @@
 [ext_resource type="Texture2D" uid="uid://u7l61y5qt7ye" path="res://Assets/Sprites/Pikem/Jump/1 Jump 2B.png" id="11_squgx"]
 [ext_resource type="Texture2D" uid="uid://cdrge0ds47yl1" path="res://Assets/Sprites/Pikem/Jump/1 Jump 3B.png" id="12_4vlc5"]
 [ext_resource type="Texture2D" uid="uid://bbsbqfviqmd0h" path="res://Assets/Sprites/Pikem/Jump/1 Jump 4B.png" id="13_yywg2"]
+[ext_resource type="Texture2D" uid="uid://bkbwyw8csrycf" path="res://Assets/Sprites/Pikem/Walk Fear 1.png" id="16_1jtaq"]
+[ext_resource type="Texture2D" uid="uid://du7gy45blmkn0" path="res://Assets/Sprites/Pikem/Dreams/Dream 1.png" id="16_odf45"]
+[ext_resource type="Texture2D" uid="uid://6yq42vshtqf6" path="res://Assets/Sprites/Pikem/Walk Fear 2.png" id="17_2jvp5"]
+[ext_resource type="Texture2D" uid="uid://cnckiordp5pew" path="res://Assets/Sprites/Pikem/Dreams/Dream 2.png" id="17_vq45i"]
+[ext_resource type="Texture2D" uid="uid://cgjhigw26ymwd" path="res://Assets/Sprites/Pikem/Walk Fear 3.png" id="18_04sru"]
+[ext_resource type="Texture2D" uid="uid://dqi7157eg0i7o" path="res://Assets/Sprites/Pikem/Dreams/Dream 3.png" id="18_ppeg0"]
+[ext_resource type="Texture2D" uid="uid://dncfbtddddvud" path="res://Assets/Sprites/Pikem/Walk Fearest 1.png" id="19_51p25"]
+[ext_resource type="Texture2D" uid="uid://e6wetycpeenr" path="res://Assets/Sprites/Pikem/Dreams/Dream 4.png" id="19_e6ri1"]
+[ext_resource type="Texture2D" uid="uid://t5rwfdvpdeme" path="res://Assets/Sprites/Pikem/Walk Fearest 2.png" id="20_3rsos"]
+[ext_resource type="Texture2D" uid="uid://bo74t1e6nqlrq" path="res://Assets/Sprites/Pikem/Dreams/Dream 5.png" id="20_gaswo"]
+[ext_resource type="Texture2D" uid="uid://bc7u8j7migu8i" path="res://Assets/Sprites/Pikem/Walk Fearest 3.png" id="21_4ndyf"]
+[ext_resource type="Texture2D" uid="uid://cujv8kbbcwgqf" path="res://Assets/Sprites/Pikem/Dreams/Dream 6.png" id="21_pw47k"]
+[ext_resource type="Texture2D" uid="uid://dnghnlior3k78" path="res://Assets/Sprites/Pikem/Dreams/Dream 7.png" id="22_mjbq5"]
+[ext_resource type="Texture2D" uid="uid://bbn1veqibuqn4" path="res://Assets/Sprites/Pikem/Dreams/Dream 8.png" id="23_1hqqe"]
+[ext_resource type="Texture2D" uid="uid://ysv6nu4lc42a" path="res://Assets/Sprites/Pikem/Wait.png" id="30_iao5a"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1eww4"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": null
+}, {
 "duration": 1.0,
 "texture": ExtResource("4_u5k8t")
 }, {
@@ -30,7 +48,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Idle",
-"speed": 3.0
+"speed": 4.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dqyc4"]
@@ -74,9 +92,23 @@ tracks/2/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Pikem/Dream:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
 
 [sub_resource type="Animation" id="Animation_gmgli"]
 resource_name = "idle"
+length = 3.0
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -114,9 +146,9 @@ tracks/2/keys = {
 "values": [false]
 }
 
-[sub_resource type="Animation" id="Animation_rufui"]
-resource_name = "move"
-length = 0.5
+[sub_resource type="Animation" id="Animation_w4qh1"]
+resource_name = "idle fear"
+length = 3.0
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -125,10 +157,174 @@ tracks/0/path = NodePath("Pikem:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.233333, 0.5),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("17_2jvp5")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pikem/Bag:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 24)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pikem/Zzz:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_533uj"]
+resource_name = "idle fearest"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pikem:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("20_3rsos")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pikem/Bag:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 24)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pikem/Zzz:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_rufui"]
+resource_name = "move"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pikem:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ExtResource("4_3031e"), ExtResource("5_vftt6"), ExtResource("5_vftt6")]
+"values": [ExtResource("5_vftt6"), ExtResource("2_u76mu"), ExtResource("4_3031e")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pikem/Bag:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 24.2857)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pikem/Zzz:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_m0hfp"]
+resource_name = "move fear"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pikem:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("16_1jtaq"), ExtResource("17_2jvp5"), ExtResource("18_04sru")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pikem/Bag:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 24.2857)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pikem/Zzz:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_psj5n"]
+resource_name = "move fearest"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pikem:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("19_51p25"), ExtResource("20_3rsos"), ExtResource("21_4ndyf")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -157,7 +353,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_bui7g"]
 resource_name = "sleep"
-length = 15.0
+length = 22.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -165,7 +361,7 @@ tracks/0/path = NodePath("Pikem:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 1.46667, 3, 3.5, 4, 4.5, 5, 10),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 1.46667, 3, 3.5, 4, 4.5, 5, 22),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [ExtResource("9_0aeg6"), ExtResource("10_gr2e3"), ExtResource("11_squgx"), ExtResource("12_4vlc5"), ExtResource("13_yywg2"), ExtResource("6_13mtv"), ExtResource("7_xm2pg"), ExtResource("6_13mtv"), ExtResource("7_xm2pg"), ExtResource("6_13mtv"), ExtResource("7_xm2pg"), ExtResource("7_xm2pg"), ExtResource("7_xm2pg")]
@@ -181,6 +377,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pikem/Dream:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 6, 6.2, 6.4, 6.6, 6.8, 7, 7.2, 7.4, 7.6, 7.8, 8, 8.2, 8.4, 8.6, 8.8, 9, 9.2, 9.4, 9.6, 9.8, 10, 10.2, 10.4, 10.6, 10.8, 11, 11.2, 12, 12.2, 12.4, 12.6, 12.8, 13, 13.2, 13.4, 13.6, 13.8, 14, 14.2, 14.4, 14.6, 14.8, 15, 15.2, 15.4, 15.6, 15.8, 16, 16.2, 16.4, 16.402, 16.6, 16.8, 17, 17.2, 18, 18.2, 18.4, 18.6, 18.8, 19, 19.2, 19.4, 19.6, 19.8, 20, 20.2, 20.4, 20.6, 20.8, 21, 21.2, 21.4, 21.6, 21.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [null, ExtResource("16_odf45"), ExtResource("17_vq45i"), ExtResource("18_ppeg0"), ExtResource("19_e6ri1"), ExtResource("18_ppeg0"), ExtResource("19_e6ri1"), ExtResource("18_ppeg0"), ExtResource("19_e6ri1"), ExtResource("18_ppeg0"), ExtResource("19_e6ri1"), ExtResource("18_ppeg0"), ExtResource("19_e6ri1"), ExtResource("18_ppeg0"), ExtResource("19_e6ri1"), ExtResource("18_ppeg0"), ExtResource("19_e6ri1"), ExtResource("18_ppeg0"), ExtResource("19_e6ri1"), ExtResource("18_ppeg0"), ExtResource("19_e6ri1"), ExtResource("18_ppeg0"), ExtResource("19_e6ri1"), ExtResource("18_ppeg0"), ExtResource("19_e6ri1"), ExtResource("17_vq45i"), ExtResource("16_odf45"), null, ExtResource("16_odf45"), ExtResource("17_vq45i"), ExtResource("20_gaswo"), ExtResource("21_pw47k"), ExtResource("20_gaswo"), ExtResource("21_pw47k"), ExtResource("20_gaswo"), ExtResource("21_pw47k"), ExtResource("20_gaswo"), ExtResource("21_pw47k"), ExtResource("20_gaswo"), ExtResource("21_pw47k"), ExtResource("20_gaswo"), ExtResource("21_pw47k"), ExtResource("20_gaswo"), ExtResource("21_pw47k"), ExtResource("20_gaswo"), ExtResource("21_pw47k"), ExtResource("20_gaswo"), ExtResource("21_pw47k"), ExtResource("20_gaswo"), ExtResource("21_pw47k"), ExtResource("20_gaswo"), ExtResource("20_gaswo"), ExtResource("21_pw47k"), ExtResource("17_vq45i"), ExtResource("16_odf45"), null, ExtResource("16_odf45"), ExtResource("17_vq45i"), ExtResource("22_mjbq5"), ExtResource("23_1hqqe"), ExtResource("22_mjbq5"), ExtResource("23_1hqqe"), ExtResource("22_mjbq5"), ExtResource("23_1hqqe"), ExtResource("22_mjbq5"), ExtResource("23_1hqqe"), ExtResource("22_mjbq5"), ExtResource("23_1hqqe"), ExtResource("22_mjbq5"), ExtResource("23_1hqqe"), ExtResource("22_mjbq5"), ExtResource("23_1hqqe"), ExtResource("22_mjbq5"), ExtResource("17_vq45i"), ExtResource("16_odf45"), null]
 }
 
 [sub_resource type="Animation" id="Animation_q28wc"]
@@ -199,13 +407,59 @@ tracks/0/keys = {
 "values": [ExtResource("7_xm2pg")]
 }
 
+[sub_resource type="Animation" id="Animation_meow5"]
+resource_name = "wait"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pikem:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("30_iao5a")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pikem/Bag:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 24)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pikem/Zzz:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pemcu"]
 _data = {
 "RESET": SubResource("Animation_88fjm"),
 "idle": SubResource("Animation_gmgli"),
+"idle fear": SubResource("Animation_w4qh1"),
+"idle fearest": SubResource("Animation_533uj"),
 "move": SubResource("Animation_rufui"),
+"move fear": SubResource("Animation_m0hfp"),
+"move fearest": SubResource("Animation_psj5n"),
 "sleep": SubResource("Animation_bui7g"),
-"sleeping": SubResource("Animation_q28wc")
+"sleeping": SubResource("Animation_q28wc"),
+"wait": SubResource("Animation_meow5")
 }
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
@@ -227,7 +481,11 @@ position = Vector2(-305.714, -58.5714)
 sprite_frames = SubResource("SpriteFrames_1eww4")
 animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.00634112
+frame = 3
+frame_progress = 0.609682
+
+[node name="Dream" type="Sprite2D" parent="Pikem"]
+position = Vector2(34.2857, -225.714)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-18, 40)
