@@ -460,8 +460,10 @@ speed = 400.0
 [node name="PIKEM" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 2)
 sprite_frames = SubResource("SpriteFrames_0qs0o")
-animation = &"Death"
+animation = &"Attack Left"
 autoplay = "Idle Down"
+frame = 3
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 13.5)
@@ -478,6 +480,4 @@ collision_layer = 4
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Attack Area" groups=["Player"]]
-position = Vector2(0, 6.66667)
-scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_uwfeb")

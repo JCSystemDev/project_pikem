@@ -14,7 +14,7 @@ config/name="Proyecto Pikem"
 run/main_scene="res://Scenes/Menu/menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 boot_splash/show_image=false
-config/icon="res://Assets/Icon.ico"
+config/icon="res://Assets/Icon.png"
 
 [audio]
 

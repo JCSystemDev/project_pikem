@@ -2,17 +2,15 @@ extends CharacterBody2D
 
 @onready var anim: AnimatedSprite2D = $PIKEM
 @export var speed: float = 200.0
+@onready var attack_col: CollisionShape2D = $"Attack Area/CollisionShape2D"
 @onready var col: CollisionShape2D = $CollisionShape2D
 var is_attacking: bool
 var last_direction: Vector2
-var anim_bag: AnimatedSprite2D
 var direction: Vector2
-var parent
-var overlapping_objects
 @onready var attack_area: Area2D = $"Attack Area"
 
 func _ready():
-	attack_area.hide()
+	attack_col.disabled = true
 	last_direction.y = 1
 	
 func _physics_process(_delta):
@@ -64,32 +62,31 @@ func _physics_process(_delta):
 func _attack():
 	direction = Vector2.ZERO
 	is_attacking = true
-	attack_area.show()
+	attack_col.disabled = false
 	AudioManager.play_sound("Slash.wav", AudioManager.sfx_stream)
-	overlapping_objects = attack_area.get_overlapping_areas()
 	if last_direction.x < 0:
+		attack_area.position.x = -20
+		attack_area.position.y = 5
 		anim.play("Attack Left")
 		await anim.animation_finished
 		anim.play("Idle Left")
 	elif last_direction.x > 0:
+		attack_area.position.x = 20
+		attack_area.position.y = 5
 		anim.play("Attack Right")
 		await anim.animation_finished
 		anim.play("Idle Right")
 	elif last_direction.y < 0:
+		attack_area.position.x = 0
+		attack_area.position.y = -15 
 		anim.play("Attack Up")
 		await anim.animation_finished
 		anim.play("Idle Up")
 	elif last_direction.y > 0:
+		attack_area.position.x = 0
+		attack_area.position.y = 20 
 		anim.play("Attack Down")
 		await anim.animation_finished
 		anim.play("Idle Down")
-	for area in overlapping_objects:
-		parent = area.get_parent()
-		if parent.has_node("AnimatedSprite2D"):
-			anim_bag = parent.get_node("AnimatedSprite2D")
-			AudioManager.play_sound("Trash.ogg", AudioManager.sfx_stream)
-			anim_bag.play("Destroyed")
-			await anim_bag.animation_finished
-			parent.queue_free()
 	is_attacking = false
-	attack_area.hide()
+	attack_col.disabled = true
