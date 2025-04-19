@@ -47,7 +47,7 @@ func _physics_process(_delta):
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			if get_tree().current_scene.name == "Underground2":
 				anim.play("idle fear")
-			elif get_tree().current_scene.name == "Overworld2": 
+			elif get_tree().current_scene.name == "Overworld2" or get_tree().current_scene.name == "Mousealley": 
 				anim.play("idle fearest")	
 			else:
 				anim.play("idle")

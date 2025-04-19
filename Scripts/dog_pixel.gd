@@ -28,12 +28,16 @@ func _process(_delta):
 		anim.flip_h = true
 	elif velocity.x < 0:
 		anim.flip_h = false
+	elif velocity.x == 0 and velocity.y == 0:
+		anim.play("Idle")
+	
 	if player:
 		anim.play("Chase")
 		_chase_player()
 	else:
 		anim.play("Patrol")
 		_patrol()
+
 	move_and_slide()
 
 func _chase_player():

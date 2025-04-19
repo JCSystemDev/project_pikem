@@ -7,7 +7,11 @@ extends Control
 @onready var right_door = $"Background/Doors/Door Right" 
 
 func _ready():
+	DataManager.in_train = false
+	DataManager.event_num = 0
+	DataManager.stolen = false
 	DataManager.first_time = true
+	DataManager.mouse_dialogue = false
 	new_game.grab_focus()
 	AudioManager.play_music("Menu.ogg")
 	pikem_anim.play("Idle")

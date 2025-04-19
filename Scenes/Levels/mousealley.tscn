@@ -220,7 +220,7 @@ interaction_texture = ExtResource("8_sg2wt")
 event_name = "Box"
 
 [node name="Obstacle" parent="." instance=ExtResource("9_jwlt8")]
-position = Vector2(7644, 632)
+position = Vector2(2975, 637)
 
 [node name="Obstacle2" parent="." instance=ExtResource("9_jwlt8")]
 position = Vector2(59, 640)

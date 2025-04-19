@@ -267,19 +267,19 @@ position = Vector2(1218, -420)
 gizmo_extents = 30.0
 
 [node name="Dog 1 5" type="Marker2D" parent="Patrol Points"]
-position = Vector2(590, 693)
+position = Vector2(581, 861)
 gizmo_extents = 30.0
 
 [node name="Dog 1 3" type="Marker2D" parent="Patrol Points"]
-position = Vector2(1260, 684)
+position = Vector2(1287, 859)
 gizmo_extents = 30.0
 
 [node name="Dog 1 0" type="Marker2D" parent="Patrol Points"]
-position = Vector2(600, 214)
+position = Vector2(583, 410)
 gizmo_extents = 30.0
 
 [node name="Dog 1 1" type="Marker2D" parent="Patrol Points"]
-position = Vector2(1250, 214)
+position = Vector2(1282, 407)
 gizmo_extents = 30.0
 
 [node name="Obstacles" type="Node2D" parent="."]
@@ -511,9 +511,9 @@ position = Vector2(960, 900)
 scale = Vector2(2.5, 2.5)
 
 [node name="Dog_Pixel" parent="." node_paths=PackedStringArray("patrol_points") instance=ExtResource("9_4mq6u")]
-position = Vector2(932, 221)
+position = Vector2(582, 405)
 scale = Vector2(2.5, 2.5)
-patrol_points = [NodePath("../Patrol Points/Dog 1 0"), NodePath("../Patrol Points/Dog 1 5"), NodePath("../Patrol Points/Dog 1 0"), NodePath("../Patrol Points/Dog 1 1"), NodePath("../Patrol Points/Dog 1 3"), NodePath("../Patrol Points/Dog 1 1")]
+patrol_points = [NodePath("../Patrol Points/Dog 1 0"), NodePath("../Patrol Points/Dog 1 5"), NodePath("../Patrol Points/Dog 1 3"), NodePath("../Patrol Points/Dog 1 1"), NodePath("../Patrol Points/Dog 1 3"), NodePath("../Patrol Points/Dog 1 5")]
 
 [node name="Dog_Pixel2" parent="." node_paths=PackedStringArray("patrol_points") instance=ExtResource("9_4mq6u")]
 position = Vector2(944, -432)

@@ -123,6 +123,7 @@ script = ExtResource("1_7ukx1")
 speed = 300.0
 
 [node name="Dog" type="AnimatedSprite2D" parent="."]
+z_index = 1
 sprite_frames = SubResource("SpriteFrames_jbg3t")
 animation = &"Patrol"
 autoplay = "Idle"
